@@ -36,7 +36,6 @@ export const HeroSlider = () => {
     [activeSlide],
   );
 
-  const activeProgressPercent = (progressMs / SLIDE_INTERVAL_MS) * 100;
 
   const goToSlide = (slideIndex: number) => {
     setActiveSlide(slideIndex);
@@ -123,33 +122,29 @@ export const HeroSlider = () => {
             <span className="text-[26px] leading-none">→</span>
           </button>
 
-          <div className="items-center box-border caret-transparent gap-x-4 flex justify-center gap-y-2 pt-[17px] md:gap-y-4 md:pt-[22px]">
+          <div className="items-center box-border caret-transparent flex justify-center gap-4 pt-[17px] md:pt-[22px]">
             <button
               onClick={() => goToSlide(0)}
               aria-label="Go to slide 1"
-              className={`font-avantt text-[21px] leading-none ${activeSlide === 0 ? "text-neutral-900" : "text-neutral-900/50"}`}
+              className={`font-avantt text-[53px] leading-none md:text-[21px] ${activeSlide === 0 ? "text-neutral-900" : "text-neutral-500"}`}
             >
               01
             </button>
-            <div className="relative h-0.5 w-24 bg-zinc-400/60 rounded-full overflow-hidden">
-              <div
-                className="absolute left-0 top-0 h-full bg-neutral-900 rounded-full transition-[width] duration-100"
-                style={{ width: `${activeProgressPercent}%` }}
-              ></div>
-            </div>
+            {activeSlide === 0 && <div className="h-0.5 w-40 bg-neutral-400"></div>}
             <button
               onClick={() => goToSlide(1)}
               aria-label="Go to slide 2"
-              className={`font-avantt text-[21px] leading-none ${activeSlide === 1 ? "text-neutral-900" : "text-neutral-900/50"}`}
+              className={`font-avantt text-[53px] leading-none md:text-[21px] ${activeSlide === 1 ? "text-neutral-900" : "text-neutral-500"}`}
             >
               02
             </button>
+            {activeSlide === 1 && <div className="h-0.5 w-40 bg-neutral-400"></div>}
             <button
               aria-label={isAutoPlay ? "Stop slide rotation" : "Start slide rotation"}
               onClick={() => setIsAutoPlay((previousValue) => !previousValue)}
-              className="items-center bg-neutral-800/40 text-white caret-transparent flex h-8 justify-center text-center w-8 p-0 rounded-[9999.01px]"
+              className="items-center bg-neutral-400 text-white caret-transparent flex h-12 justify-center text-center w-12 p-0 rounded-[9999.01px] md:h-8 md:w-8"
             >
-              {isAutoPlay ? "❚❚" : "▶"}
+              <span className="text-[18px] leading-none md:text-xs">{isAutoPlay ? "❚❚" : "▶"}</span>
             </button>
           </div>
         </div>
