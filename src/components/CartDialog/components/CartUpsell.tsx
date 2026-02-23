@@ -4,32 +4,32 @@ import { UpsellProduct } from "@/components/CartDialog/components/UpsellProduct"
 export const CartUpsell = () => {
   return (
     <div className="bg-[#ececec]">
-      <div className="flex items-center justify-between px-8 pb-6 pt-7">
-        <h3 className="text-[52px] font-medium tracking-[-1.04px] leading-none text-neutral-900">
+      <div className="flex items-center justify-between px-4 pb-4 pt-5">
+        <h3 className="text-[16px] font-medium tracking-[-0.32px] text-neutral-900">
           You may also like
         </h3>
-        <div className="flex items-center gap-5 text-neutral-800">
+        <div className="flex items-center gap-2 text-neutral-800">
           <button
             type="button"
             aria-label="Scroll to previous items"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full text-neutral-400"
+            className="inline-flex h-6 w-6 items-center justify-center rounded-full text-neutral-400"
           >
-            <ChevronLeft className="h-9 w-9 stroke-[1.8]" />
+            <ChevronLeft className="h-5 w-5 stroke-[1.8]" />
           </button>
           <button
             type="button"
             aria-label="Scroll to next items"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full"
+            className="inline-flex h-6 w-6 items-center justify-center rounded-full"
           >
-            <ChevronRight className="h-9 w-9 stroke-[1.8]" />
+            <ChevronRight className="h-5 w-5 stroke-[1.8]" />
           </button>
         </div>
       </div>
-      <div className="px-8">
+      <div className="px-4">
         <ul
           role="list"
           aria-label="You may also like"
-          className="grid auto-cols-[calc(68%-4px)] grid-flow-col gap-4 overflow-x-auto overflow-y-hidden overscroll-x-contain pb-7 scroll-p-8"
+          className="grid auto-cols-[calc(86%-4px)] grid-flow-col gap-2 overflow-x-auto overflow-y-hidden overscroll-x-contain pb-5 scroll-p-4"
         >
           <UpsellProduct
             productName="Loop Switch 2"
@@ -111,7 +111,7 @@ export const CartUpsell = () => {
           />
         </ul>
       </div>
-      <div className="px-8 pb-8">
+      <div className="px-4 pb-5">
         <div className="h-1 rounded-full bg-[#cecece]">
           <div className="h-full w-[19%] rounded-full bg-[#23242a]" />
         </div>

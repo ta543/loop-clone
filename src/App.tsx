@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { CountrySelector } from "@/components/CountrySelector";
 import { AnnouncementBar } from "@/sections/AnnouncementBar";
 import { Header } from "@/sections/Header";
@@ -7,6 +8,8 @@ import { CartDialog } from "@/components/CartDialog";
 import { OrderNotesDialog } from "@/components/OrderNotesDialog";
 
 export const App = () => {
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
   return (
     <body className="text-neutral-900/80 text-xl not-italic normal-nums font-medium accent-auto bg-fixed bg-white box-border caret-transparent block tracking-[-0.6px] leading-[30px] list-outside list-disc pointer-events-auto text-start indent-[0px] normal-case visible border-separate font-avantt">
       <div className="box-border caret-transparent">
@@ -31,13 +34,13 @@ export const App = () => {
       <div className="box-border caret-transparent"></div>
       <CountrySelector />
       <AnnouncementBar />
-      <Header />
+      <Header onOpenCart={() => setIsCartOpen(true)} />
       <div className="box-border caret-transparent"></div>
       <div className="box-border caret-transparent"></div>
       <Main />
       <Footer />
       <div className="box-border caret-transparent"></div>
-      <CartDialog />
+      <CartDialog isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
       <OrderNotesDialog />
       <div className="box-border caret-transparent"></div>
       <div className="box-border caret-transparent"></div>
