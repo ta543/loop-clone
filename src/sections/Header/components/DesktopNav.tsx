@@ -5,8 +5,8 @@ const shopProducts = [
     description:
       "Three noise relief modes in one convenient earplug for ultimate in-the-moment control",
     image:
-      "https://images.loopearplugs.com/loop-switch-2-teal.png",
-    href: "https://www.loopearplugs.com/products/loop-switch-2",
+      "https://www.loopearplugs.com/cdn/shop/files/PDP_SWITCH_EMERALD_1-371454.png?v=1729670651&width=196",
+    href: "https://www.loopearplugs.com/products/switch",
   },
   {
     name: "Loop Experience 2 Plus",
@@ -14,8 +14,8 @@ const shopProducts = [
     description:
       "An upgrade to Experience 2, with Loop Mute included for extra noise reduction on demand.",
     image:
-      "https://images.loopearplugs.com/loop-experience-2-plus-gold.png",
-    href: "https://www.loopearplugs.com/products/loop-experience-2-plus",
+      "https://www.loopearplugs.com/cdn/shop/files/PDP_EXPERIENCE2PLUS_GOLD_01-374433.png?v=1715750475&width=196",
+    href: "https://www.loopearplugs.com/products/experience-plus",
   },
   {
     name: "Loop Dream",
@@ -23,8 +23,8 @@ const shopProducts = [
     description:
       "Designed for side-sleeping comfort and powerful noise reduction. A dreamy night's sleep awaits.",
     image:
-      "https://images.loopearplugs.com/loop-dream-purple.png",
-    href: "https://www.loopearplugs.com/products/loop-dream",
+      "https://www.loopearplugs.com/cdn/shop/files/PDP_DREAM_LILAC_1-270685.png?v=1728593375&width=196",
+    href: "https://www.loopearplugs.com/products/dream",
   },
   {
     name: "Loop Engage 2",
@@ -32,8 +32,8 @@ const shopProducts = [
     description:
       "Noise-filtering earplugs for clear conversations when parenting, socializing and beyond.",
     image:
-      "https://images.loopearplugs.com/loop-engage-2-clear.png",
-    href: "https://www.loopearplugs.com/products/loop-engage-2",
+      "https://www.loopearplugs.com/cdn/shop/files/PDP_ENGAGE2_CLEAR_01-917223.png?v=1715087473&width=196",
+    href: "https://www.loopearplugs.com/products/engage",
   },
   {
     name: "Loop Quiet 2",
@@ -41,8 +41,8 @@ const shopProducts = [
     description:
       "Ultra-comfy earplugs for deep focus, travel, sleep and getting in your quiet bubble.",
     image:
-      "https://images.loopearplugs.com/loop-quiet-2-white.png",
-    href: "https://www.loopearplugs.com/products/loop-quiet-2",
+      "https://www.loopearplugs.com/cdn/shop/files/PDP_QUIET_WHITE_01-805740.png?v=1725976815&width=196",
+    href: "https://www.loopearplugs.com/products/quiet",
   },
   {
     name: "Loop Engage 2 Plus",
@@ -50,8 +50,8 @@ const shopProducts = [
     description:
       "An upgrade to Engage 2, with Loop Mute included for extra noise reduction on demand.",
     image:
-      "https://images.loopearplugs.com/loop-engage-2-plus-clear.png",
-    href: "https://www.loopearplugs.com/products/loop-engage-2-plus",
+      "https://www.loopearplugs.com/cdn/shop/files/PDP_ENGAGE2PLUS_CLEAR_01-244449.png?v=1715087473&width=196",
+    href: "https://www.loopearplugs.com/products/engage-plus",
   },
   {
     name: "Loop Experience 2",
@@ -59,8 +59,8 @@ const shopProducts = [
     description:
       "Certified hearing protection for crisp, clear sound during concerts, live music and events.",
     image:
-      "https://images.loopearplugs.com/loop-experience-2-silver.png",
-    href: "https://www.loopearplugs.com/products/loop-experience-2",
+      "https://www.loopearplugs.com/cdn/shop/files/PDP_EXPERIENCE2_SILVER_01.png?v=1770983744&width=196",
+    href: "https://www.loopearplugs.com/products/experience",
   },
   {
     name: "Loop Engage Kids 2",
@@ -68,8 +68,8 @@ const shopProducts = [
     description:
       "Noise-filtering earplugs for learning, playing and growing (ages 6-12).",
     image:
-      "https://images.loopearplugs.com/loop-engage-kids-2.png",
-    href: "https://www.loopearplugs.com/products/loop-engage-kids-2",
+      "https://www.loopearplugs.com/cdn/shop/files/PDP_ENGAGE_KIDS_2_BERRY_BLUE_01.png?v=1759828353&width=196",
+    href: "https://www.loopearplugs.com/products/engage-kids",
   },
 ];
 
@@ -77,25 +77,25 @@ const shopQuickLinks = [
   {
     label: "All products",
     image:
-      "https://images.loopearplugs.com/shop-all-products.png",
+      "https://www.loopearplugs.com/cdn/shop/files/Loop_Earplugs_mega-menu_all_products_92bb9540-29e1-43ca-82d7-92277a2aecf7.png?v=1764655979&width=196",
     href: "https://www.loopearplugs.com/collections/all",
   },
   {
     label: "Build your own bundle",
     image:
-      "https://images.loopearplugs.com/build-your-own-bundle.png",
-    href: "https://www.loopearplugs.com/pages/build-your-own-bundle",
+      "https://www.loopearplugs.com/cdn/shop/files/Image_4_c3742dd9-96af-49ee-93db-3e2402af0e15.png?v=1767704377&width=196",
+    href: "https://www.loopearplugs.com/products/build-your-bundle",
   },
   {
     label: "Bundle & Save",
     image:
-      "https://images.loopearplugs.com/bundle-and-save.png",
+      "https://www.loopearplugs.com/cdn/shop/files/Loop_Earplugs_mega-menu_bundles.png?v=1707500513&width=196",
     href: "https://www.loopearplugs.com/collections/bundles",
   },
   {
     label: "Accessories",
     image:
-      "https://images.loopearplugs.com/accessories.png",
+      "https://www.loopearplugs.com/cdn/shop/files/Experience_2_Carry_Case-removebg-preview.png?v=1721719771&width=196",
     href: "https://www.loopearplugs.com/collections/accessories",
   },
 ];
@@ -119,31 +119,31 @@ export const DesktopNav = () => {
           </button>
 
           <div className="pointer-events-none invisible absolute left-0 top-full z-30 w-screen border-t border-[#ececec] bg-[#f7f7f7] opacity-0 shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition duration-150 group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:visible group-focus-within:opacity-100">
-            <div className="mx-auto grid w-full max-w-[1320px] grid-cols-[minmax(0,1fr)_420px] gap-10 px-8 py-10">
-              <div className="grid grid-cols-2 gap-x-12 gap-y-8 pr-2">
+            <div className="mx-auto grid w-full max-w-[1320px] grid-cols-[minmax(0,1fr)_420px] gap-8 px-8 py-5">
+              <div className="grid grid-cols-2 gap-x-8 gap-y-5">
                 {shopProducts.map((product) => (
                   <a
                     key={product.name}
                     href={product.href}
-                    className="grid grid-cols-[84px_minmax(0,1fr)] items-start gap-4 rounded-xl px-2 py-2 transition hover:bg-white/80"
+                    className="grid grid-cols-[98px_minmax(0,1fr)] items-start gap-4 rounded-xl p-2 transition hover:bg-white"
                   >
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="h-[76px] w-[76px] object-contain"
+                      className="h-[98px] w-[98px] object-contain"
                     />
 
-                    <div className="pt-1">
+                    <div>
                       <div className="flex items-center gap-2">
-                        <span className="text-[40px] leading-[1.08] font-medium text-[#2d2d2d]">
+                        <span className="text-[42px] leading-[1.1] font-medium text-[#2d2d2d]">
                           {product.name}
                         </span>
-                        <span className="rounded-md bg-[#ececec] px-2 py-1 text-[22px] leading-none text-[#666]">
+                        <span className="rounded bg-[#ececec] px-2 py-[3px] text-[22px] leading-none text-[#666]">
                           {product.tag}
                         </span>
                       </div>
 
-                      <p className="mt-2 text-[31px] leading-[1.3] text-[#666]">
+                      <p className="mt-2 text-[31px] leading-[1.35] text-[#666]">
                         {product.description}
                       </p>
                     </div>
@@ -151,18 +151,18 @@ export const DesktopNav = () => {
                 ))}
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {shopQuickLinks.map((link) => (
                   <a
                     key={link.label}
                     href={link.href}
-                    className="flex items-center justify-between rounded-3xl bg-[#ececec] px-5 py-4 transition hover:bg-[#e5e5e5]"
+                    className="flex min-h-[104px] items-center justify-between rounded-2xl bg-[#ececec] px-4 py-3 transition hover:bg-[#e5e5e5]"
                   >
                     <div className="flex items-center gap-4">
                       <img
                         src={link.image}
                         alt={link.label}
-                        className="h-[84px] w-[84px] rounded-xl object-cover"
+                        className="h-[74px] w-[74px] rounded-lg object-cover"
                       />
                       <span className="text-[44px] leading-[1.1] font-medium text-[#2d2d2d]">
                         {link.label}
@@ -171,7 +171,7 @@ export const DesktopNav = () => {
 
                     <span
                       aria-hidden="true"
-                      className="inline-flex h-[62px] w-[62px] items-center justify-center rounded-full bg-[#f7f7f7] text-[36px] text-[#2d2d2d]"
+                      className="inline-flex h-[48px] w-[48px] items-center justify-center rounded-full bg-[#f7f7f7] text-[30px] text-[#2d2d2d]"
                     >
                       →
                     </span>
