@@ -125,25 +125,25 @@ export const DesktopNav = () => {
                   <a
                     key={product.name}
                     href={product.href}
-                    className="grid grid-cols-[98px_minmax(0,1fr)] items-start gap-4 rounded-xl p-2 transition hover:bg-white"
+                    className="grid grid-cols-[84px_minmax(0,1fr)] items-start gap-4 rounded-xl px-2 py-1 transition hover:bg-white"
                   >
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="h-[98px] w-[98px] object-contain"
+                      className="h-[72px] w-[72px] object-contain"
                     />
 
                     <div>
                       <div className="flex items-center gap-2">
-                        <span className="text-[42px] leading-[1.1] font-medium text-[#2d2d2d]">
+                        <span className="text-[16px] leading-[1.2] font-medium text-[#2d2d2d]">
                           {product.name}
                         </span>
-                        <span className="rounded bg-[#ececec] px-2 py-[3px] text-[22px] leading-none text-[#666]">
+                        <span className="rounded bg-[#ececec] px-2 py-[2px] text-[11px] leading-none text-[#666]">
                           {product.tag}
                         </span>
                       </div>
 
-                      <p className="mt-2 text-[31px] leading-[1.35] text-[#666]">
+                      <p className="mt-2 text-[13px] leading-[1.45] text-[#666]">
                         {product.description}
                       </p>
                     </div>
@@ -162,16 +162,16 @@ export const DesktopNav = () => {
                       <img
                         src={link.image}
                         alt={link.label}
-                        className="h-[74px] w-[74px] rounded-lg object-cover"
+                        className="h-[70px] w-[70px] rounded-lg object-cover"
                       />
-                      <span className="text-[44px] leading-[1.1] font-medium text-[#2d2d2d]">
+                      <span className="text-[16px] leading-[1.2] font-medium text-[#2d2d2d]">
                         {link.label}
                       </span>
                     </div>
 
                     <span
                       aria-hidden="true"
-                      className="inline-flex h-[48px] w-[48px] items-center justify-center rounded-full bg-[#f7f7f7] text-[30px] text-[#2d2d2d]"
+                      className="inline-flex h-[44px] w-[44px] items-center justify-center rounded-full bg-[#f7f7f7] text-[20px] text-[#2d2d2d]"
                     >
                       →
                     </span>
