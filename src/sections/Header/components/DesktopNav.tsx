@@ -118,7 +118,7 @@ export const DesktopNav = () => {
             Shop
           </button>
 
-          <div className="pointer-events-none invisible absolute left-0 top-full z-30 w-screen border-t border-[#ececec] bg-[#f7f7f7] opacity-0 shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition duration-150 group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100">
+          <div className="pointer-events-none invisible absolute left-0 top-full z-30 w-screen border-t border-[#ececec] bg-[#f7f7f7] opacity-0 shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition duration-150 group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:visible group-focus-within:opacity-100">
             <div className="mx-auto grid w-full max-w-[1320px] grid-cols-[minmax(0,1fr)_420px] gap-10 px-8 py-10">
               <div className="grid grid-cols-2 gap-x-12 gap-y-8 pr-2">
                 {shopProducts.map((product) => (
