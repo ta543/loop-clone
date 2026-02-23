@@ -67,7 +67,7 @@ export const HeroSlider = () => {
 
   return (
     <div className="box-border caret-transparent w-full overflow-hidden mb-6 md:mb-12">
-      <div className="box-border caret-transparent w-full mx-auto px-4 md:px-10">
+      <div className="box-border caret-transparent w-full mx-auto px-4 md:max-w-[1360px] md:px-0">
         <div
           aria-label="Featured content"
           role="region"
