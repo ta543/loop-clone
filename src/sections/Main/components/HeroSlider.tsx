@@ -107,13 +107,15 @@ export const HeroSlider = () => {
             />
           </div>
 
-          <button
-            aria-label="Previous slide"
-            onClick={() => goToSlide((activeSlide + slidesCount - 1) % slidesCount)}
-            className="hidden md:absolute md:appearance-none md:text-neutral-800 md:items-center md:bg-white md:shadow-[rgba(0,0,0,0.05)_0px_0px_10px_0px] md:flex md:h-16 md:justify-center md:translate-y-[-50%] md:w-16 md:z-[4] md:rounded-[9999.01px] md:-left-8 md:top-2/4"
-          >
-            <span className="text-[26px] leading-none">←</span>
-          </button>
+          {activeSlide > 0 && (
+            <button
+              aria-label="Previous slide"
+              onClick={() => goToSlide((activeSlide + slidesCount - 1) % slidesCount)}
+              className="hidden md:absolute md:appearance-none md:text-neutral-800 md:items-center md:bg-white md:shadow-[rgba(0,0,0,0.05)_0px_0px_10px_0px] md:flex md:h-16 md:justify-center md:translate-y-[-50%] md:w-16 md:z-[4] md:rounded-[9999.01px] md:-left-8 md:top-2/4"
+            >
+              <span className="text-[26px] leading-none">←</span>
+            </button>
+          )}
           <button
             aria-label="Next slide"
             onClick={() => goToSlide((activeSlide + 1) % slidesCount)}
