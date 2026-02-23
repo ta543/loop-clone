@@ -7,7 +7,7 @@ type CartDialogProps = {
   onClose: () => void;
 };
 
-const ANIMATION_MS = 420;
+const ANIMATION_MS = 700;
 
 export const CartDialog = ({ isOpen, onClose }: CartDialogProps) => {
   const [shouldRender, setShouldRender] = useState(isOpen);
@@ -32,13 +32,13 @@ export const CartDialog = ({ isOpen, onClose }: CartDialogProps) => {
   return (
     <aside
       aria-label="Cart drawer"
-      className={`fixed inset-0 z-50 flex justify-end bg-black/30 transition-opacity duration-300 ease-out ${
+      className={`fixed inset-0 z-50 flex justify-end bg-black/30 transition-opacity duration-700 ease-out ${
         isVisible ? "opacity-100" : "opacity-0"
       }`}
       onClick={onClose}
     >
       <section
-        className={`font-avantt font-medium flex h-full w-full max-w-[460px] flex-col overflow-hidden bg-[#f6f6f6] text-neutral-800 shadow-xl transition-all duration-[420ms] [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] ${
+        className={`font-avantt font-medium flex h-full w-full max-w-[460px] flex-col overflow-hidden bg-[#f6f6f6] text-neutral-800 shadow-xl transition-all duration-[700ms] [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] ${
           isVisible
             ? "translate-x-0 scale-100 opacity-100"
             : "translate-x-[110%] scale-[0.985] opacity-90"
