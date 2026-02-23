@@ -60,9 +60,13 @@ export const CartDialog = ({ isOpen, onClose }: CartDialogProps) => {
         <main className="flex min-h-0 flex-1 flex-col">
           <div className="px-8 pb-5">
             <div className="rounded-xl bg-[#d9edf0] px-8 py-6">
-              <div className="mb-5 flex items-center justify-between text-[13px] tracking-[-0.26px] leading-none text-neutral-800">
-                <p>Free shipping over €39</p>
-                <p>€39.00 left</p>
+              <div className="mb-5 flex items-center justify-between">
+                <p className="block text-[14px] font-medium leading-[16.1px] tracking-normal text-[#252427] [font-family:Avantt,sans-serif]">
+                  Free shipping over €39
+                </p>
+                <p className="block text-[14px] font-medium leading-[16.1px] tracking-normal text-[#252427] [font-family:Avantt,sans-serif]">
+                  €39.00 left
+                </p>
               </div>
               <div className="h-1 w-full rounded-full bg-[#e4dede]" />
             </div>
