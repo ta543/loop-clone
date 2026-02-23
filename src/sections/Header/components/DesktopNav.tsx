@@ -14,7 +14,7 @@ export const DesktopNav = () => {
             aria-label="Submenu for Shop"
             className="box-border caret-transparent block min-h-0 min-w-0 md:min-h-[auto] md:min-w-[auto]"
           >
-            <button className="text-neutral-900 items-center bg-transparent caret-transparent flex text-center underline-offset-[3px] p-3">
+            <button className="text-neutral-900 items-center bg-transparent caret-transparent flex text-center underline-offset-[3px] hover:underline p-3">
               Shop
             </button>
           </div>
@@ -22,7 +22,7 @@ export const DesktopNav = () => {
         <li className="items-center box-border caret-transparent flex min-h-0 min-w-0 py-0 md:min-h-[auto] md:min-w-[auto] md:py-2">
           <a
             href="https://www.loopearplugs.com/collections/bundles"
-            className="text-black items-center box-border caret-transparent flex min-h-0 min-w-0 underline-offset-[3px] p-3 md:min-h-[auto] md:min-w-[auto]"
+            className="text-black items-center box-border caret-transparent flex min-h-0 min-w-0 underline-offset-[3px] hover:underline p-3 md:min-h-[auto] md:min-w-[auto]"
           >
             <span className="box-border caret-transparent block min-h-0 min-w-0 underline-offset-[3px] md:min-h-[auto] md:min-w-[auto]">
               Bundles
@@ -35,7 +35,7 @@ export const DesktopNav = () => {
             aria-label="Submenu for Help me choose"
             className="box-border caret-transparent block min-h-0 min-w-0 md:min-h-[auto] md:min-w-[auto]"
           >
-            <button className="text-neutral-900 items-center bg-transparent caret-transparent flex text-center underline-offset-[3px] p-3">
+            <button className="text-neutral-900 items-center bg-transparent caret-transparent flex text-center underline-offset-[3px] hover:underline p-3">
               Help me choose
             </button>
           </div>
@@ -43,7 +43,7 @@ export const DesktopNav = () => {
         <li className="items-center box-border caret-transparent flex min-h-0 min-w-0 py-0 md:min-h-[auto] md:min-w-[auto] md:py-2">
           <a
             href="https://www.loopearplugs.com/pages/contact"
-            className="text-black items-center box-border caret-transparent flex min-h-0 min-w-0 underline-offset-[3px] p-3 md:min-h-[auto] md:min-w-[auto]"
+            className="text-black items-center box-border caret-transparent flex min-h-0 min-w-0 underline-offset-[3px] hover:underline p-3 md:min-h-[auto] md:min-w-[auto]"
           >
             <span className="box-border caret-transparent block min-h-0 min-w-0 underline-offset-[3px] md:min-h-[auto] md:min-w-[auto]">
               FAQ
@@ -53,7 +53,7 @@ export const DesktopNav = () => {
         <li className="items-center box-border caret-transparent flex min-h-0 min-w-0 py-0 md:min-h-[auto] md:min-w-[auto] md:py-2">
           <a
             href="https://www.loopearplugs.com/pages/careers"
-            className="text-black items-center box-border caret-transparent flex min-h-0 min-w-0 underline-offset-[3px] p-3 md:min-h-[auto] md:min-w-[auto]"
+            className="text-black items-center box-border caret-transparent flex min-h-0 min-w-0 underline-offset-[3px] hover:underline p-3 md:min-h-[auto] md:min-w-[auto]"
           >
             <span className="box-border caret-transparent block min-h-0 min-w-0 underline-offset-[3px] md:min-h-[auto] md:min-w-[auto]">
               We&#39;re Hiring
