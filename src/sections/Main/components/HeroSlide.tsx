@@ -172,7 +172,7 @@ export const HeroSlide = (props: HeroSlideProps) => {
             <div className="box-border caret-transparent gap-x-2 flex flex-col justify-center gap-y-2 text-center md:gap-x-4 md:flex-row md:gap-y-4 md:text-left">
               <a
                 href={props.ctaUrl}
-                className="relative text-white items-center bg-neutral-800 box-border caret-transparent flex justify-center leading-[normal] min-h-16 min-w-[122px] text-center px-10 rounded-[9999.01px] md:text-left"
+                className="relative appearance-none text-white text-[20px] font-medium font-avantt items-center bg-[rgb(37,36,39)] box-border caret-transparent flex h-16 min-h-16 min-w-[122px] justify-center tracking-[-0.6px] leading-normal text-left px-10 py-0 rounded-[9999.01px] transition-shadow duration-100 ease-in"
               >
                 {props.ctaText}
               </a>
