@@ -35,7 +35,7 @@ export const HeroSlide = (props: HeroSlideProps) => {
     >
       <div className="relative box-border caret-transparent flex flex-col h-full min-h-[700px] w-full px-4 md:flex-row md:min-h-[620px] md:pl-16">
         <div
-          className={`absolute box-border caret-transparent h-full w-full overflow-hidden rounded-xl left-0 top-0 md:rounded-2xl ${props.variant === "video" ? "bg-black opacity-100 md:opacity-50" : "bg-stone-50"}`}
+          className={`absolute box-border caret-transparent h-full w-full overflow-hidden rounded-xl left-0 top-0 md:rounded-2xl ${props.variant === "video" ? "bg-black" : "bg-stone-50"}`}
         >
           {props.hasVideo && props.showNavigationButtons && (
             <>
@@ -103,6 +103,9 @@ export const HeroSlide = (props: HeroSlideProps) => {
               </video>
             </div>
           )}
+          {props.variant === "video" && (
+            <div className="absolute inset-0 bg-black/40 md:bg-black/55 z-[1]"></div>
+          )}
           {props.hasImage && (
             <div className="box-border caret-transparent absolute h-[120%] left-[-10%] top-[-10%] w-[120%] overflow-hidden">
               <picture className="box-border caret-transparent h-full object-cover w-full">
@@ -116,7 +119,7 @@ export const HeroSlide = (props: HeroSlideProps) => {
           )}
         </div>
         {props.productImageUrl && (
-          <div className="box-border caret-transparent w-auto md:w-6/12 order-none -mt-4 mb-0 md:order-1 md:-mt-6 md:mb-4">
+          <div className="relative z-[2] box-border caret-transparent w-auto md:w-6/12 order-none -mt-4 mb-0 md:order-1 md:-mt-6 md:mb-4">
             <picture className="box-border caret-transparent">
               <img
                 src={props.productImageUrl}
@@ -127,7 +130,7 @@ export const HeroSlide = (props: HeroSlideProps) => {
           </div>
         )}
         <div
-          className={`box-border caret-transparent w-auto md:w-6/12 ${props.variant === "video" ? "relative text-white items-center flex flex-col h-full justify-end text-center py-4 md:items-start md:justify-center md:text-left md:py-16" : "relative items-center box-border caret-transparent flex flex-col h-full justify-end text-center w-auto py-4 md:items-start md:justify-center md:text-left md:w-6/12 md:py-16"}`}
+          className={`box-border caret-transparent w-auto md:w-6/12 ${props.variant === "video" ? "relative z-[2] text-white items-center flex flex-col h-full justify-end text-center py-4 md:items-start md:justify-center md:text-left md:py-16" : "relative items-center box-border caret-transparent flex flex-col h-full justify-end text-center w-auto py-4 md:items-start md:justify-center md:text-left md:w-6/12 md:py-16"}`}
         >
           <div className="box-border caret-transparent text-center md:text-left">
             <div

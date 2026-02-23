@@ -1,6 +1,48 @@
+import { useEffect, useMemo, useState } from "react";
+
 import { HeroSlide } from "@/sections/Main/components/HeroSlide";
 
+const SLIDE_INTERVAL_MS = 5000;
+const SLIDE_OFFSET_PX = 1392;
+
 export const HeroSlider = () => {
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [isAutoPlay, setIsAutoPlay] = useState(true);
+  const [progressMs, setProgressMs] = useState(0);
+
+  const slidesCount = 2;
+
+  useEffect(() => {
+    if (!isAutoPlay) return;
+
+    const intervalId = window.setInterval(() => {
+      setProgressMs((previousProgress) => {
+        const nextProgress = previousProgress + 100;
+
+        if (nextProgress >= SLIDE_INTERVAL_MS) {
+          setActiveSlide((previousSlide) => (previousSlide + 1) % slidesCount);
+          return 0;
+        }
+
+        return nextProgress;
+      });
+    }, 100);
+
+    return () => window.clearInterval(intervalId);
+  }, [isAutoPlay, slidesCount]);
+
+  const trackTransform = useMemo(
+    () => `translateX(-${activeSlide * SLIDE_OFFSET_PX}px)`,
+    [activeSlide],
+  );
+
+  const activeProgressPercent = (progressMs / SLIDE_INTERVAL_MS) * 100;
+
+  const goToSlide = (slideIndex: number) => {
+    setActiveSlide(slideIndex);
+    setProgressMs(0);
+  };
+
   return (
     <div className="box-border caret-transparent w-full overflow-hidden mb-6 md:mb-12">
       <div className="box-border caret-transparent w-full mx-auto px-4 md:px-10">
@@ -9,7 +51,10 @@ export const HeroSlider = () => {
           role="region"
           className="relative box-border caret-transparent block list-none z-[1] overflow-hidden mx-auto md:overflow-visible"
         >
-          <div className="relative caret-transparent flex h-full translate-x-0 w-full z-[1]">
+          <div
+            className="relative caret-transparent flex h-full w-full z-[1] transition-transform duration-700 ease-in-out"
+            style={{ transform: trackTransform }}
+          >
             <HeroSlide
               ariaLabel="1 / 2"
               variant="video"
@@ -62,47 +107,49 @@ export const HeroSlider = () => {
               showNavigationButtons={false}
             />
           </div>
+
           <button
             aria-label="Previous slide"
-            className="static text-neutral-900/80 [align-items:normal] bg-transparent shadow-none caret-transparent hidden h-auto justify-normal text-center transform-none w-auto z-auto p-0 rounded-none -left-6 top-auto md:absolute md:appearance-none md:text-neutral-800 md:items-center md:bg-white md:shadow-[rgba(0,0,0,0.05)_0px_0px_10px_0px] md:flex md:h-16 md:justify-center md:translate-y-[-50.0%] md:w-16 md:z-[4] md:rounded-[9999.01px] md:-left-8 md:top-2/4"
+            onClick={() => goToSlide((activeSlide + slidesCount - 1) % slidesCount)}
+            className="hidden md:absolute md:appearance-none md:text-neutral-800 md:items-center md:bg-white md:shadow-[rgba(0,0,0,0.05)_0px_0px_10px_0px] md:flex md:h-16 md:justify-center md:translate-y-[-50%] md:w-16 md:z-[4] md:rounded-[9999.01px] md:-left-8 md:top-2/4"
           >
-            <img
-              src="https://c.animaapp.com/mlzh4mmjaX4oGl/assets/icon-13.svg"
-              alt="Icon"
-              className="text-neutral-900/80 box-border caret-transparent h-auto transform-none w-[15px] md:text-neutral-800 md:h-4 md:w-[18px] md:-scale-100"
-            />
+            <span className="text-[26px] leading-none">←</span>
           </button>
-          <div className="items-center box-border caret-transparent gap-x-2 flex justify-center gap-y-2 pt-[17px] md:gap-x-4 md:gap-y-4 md:pt-[22px]">
-            <div className="relative items-center box-border caret-transparent gap-x-0 flex h-[41px] justify-center gap-y-0 w-max z-10 md:gap-x-2 md:h-[46px] md:gap-y-2">
-              <span
-                role="button"
-                aria-label="Go to slide 1"
-                className="relative text-xl items-center box-border caret-transparent flex h-6 justify-center leading-[30px] opacity-100 w-6 md:text-[21px] md:leading-6 md:opacity-75 before:accent-auto before:bg-neutral-800 before:box-border before:caret-transparent before:text-neutral-900/80 before:block before:text-xl before:not-italic before:normal-nums before:font-medium before:h-2.5 before:tracking-[-0.6px] before:leading-[30px] before:list-outside before:list-none before:min-h-[auto] before:min-w-[auto] before:opacity-50 before:pointer-events-auto before:text-start before:indent-[0px] before:normal-case before:visible before:w-2.5 before:rounded-[50%] before:border-separate before:font-avantt before:md:hidden before:md:text-[21px] before:md:h-5 before:md:leading-6 before:md:min-h-0 before:md:min-w-0 before:md:w-5 after:md:accent-auto after:md:box-border after:md:caret-transparent after:md:text-neutral-900/80 after:md:block after:md:text-[21px] after:md:not-italic after:md:normal-nums after:md:font-medium after:md:tracking-[-0.6px] after:md:leading-6 after:md:list-outside after:md:list-none after:md:min-h-[auto] after:md:min-w-[auto] after:md:pointer-events-auto after:md:text-start after:md:no-underline after:md:indent-[0px] after:md:normal-case after:md:visible after:md:border-separate after:md:font-avantt"
-              >
-                <div className="absolute text-xl bg-zinc-400 box-border caret-transparent h-0.5 leading-[30px] translate-y-[-50.0%] w-0 z-[1] overflow-hidden left-[calc(100%_+_8px)] top-2/4 md:text-[21px] md:leading-6 after:accent-auto after:bg-neutral-800 after:box-border after:caret-transparent after:text-neutral-900/80 after:block after:blur-[6px] after:text-xl after:not-italic after:normal-nums after:font-medium after:h-2.5 after:tracking-[-0.6px] after:leading-[30px] after:list-outside after:list-none after:pointer-events-auto after:absolute after:text-start after:indent-[0px] after:normal-case after:translate-y-[-5px] after:visible after:w-[0%] after:border-separate after:left-0 after:top-2/4 after:font-avantt after:md:text-[21px] after:md:leading-6"></div>
-              </span>
-              <span
-                role="button"
-                aria-label="Go to slide 2"
-                className="relative text-neutral-900/80 text-xl items-center box-border caret-transparent flex h-6 justify-center leading-[30px] w-6 mr-0 md:text-neutral-800 md:text-[21px] md:leading-6 md:mr-[88px] after:md:accent-auto after:md:box-border after:md:caret-transparent after:md:text-neutral-800 after:md:block after:md:text-[21px] after:md:not-italic after:md:normal-nums after:md:font-medium after:md:tracking-[-0.6px] after:md:leading-6 after:md:list-outside after:md:list-none after:md:min-h-[auto] after:md:min-w-[auto] after:md:pointer-events-auto after:md:text-start after:md:no-underline after:md:indent-[0px] after:md:normal-case after:md:visible after:md:border-separate after:md:font-avantt"
-              >
-                <div className="absolute text-neutral-900/80 text-xl bg-zinc-400 box-border caret-transparent h-0.5 leading-[30px] translate-y-[-50.0%] w-0 z-[1] overflow-hidden left-[calc(100%_+_8px)] top-2/4 md:text-neutral-800 md:text-[21px] md:leading-6 md:w-20 after:accent-auto after:bg-neutral-800 after:box-border after:caret-transparent after:text-neutral-900/80 after:block after:blur-[6px] after:text-xl after:not-italic after:normal-nums after:font-medium after:h-2.5 after:tracking-[-0.6px] after:leading-[30px] after:list-outside after:list-none after:pointer-events-auto after:absolute after:text-start after:indent-[0px] after:normal-case after:translate-y-[-5px] after:visible after:w-[0%] after:border-separate after:left-0 after:top-2/4 after:font-avantt after:md:text-neutral-800 after:md:text-[21px] after:md:leading-6"></div>
-              </span>
+          <button
+            aria-label="Next slide"
+            onClick={() => goToSlide((activeSlide + 1) % slidesCount)}
+            className="hidden md:absolute md:appearance-none md:text-neutral-800 md:items-center md:bg-white md:shadow-[rgba(0,0,0,0.05)_0px_0px_10px_0px] md:flex md:h-16 md:justify-center md:translate-y-[-50%] md:w-16 md:z-[4] md:rounded-[9999.01px] md:-right-8 md:top-2/4"
+          >
+            <span className="text-[26px] leading-none">→</span>
+          </button>
+
+          <div className="items-center box-border caret-transparent gap-x-4 flex justify-center gap-y-2 pt-[17px] md:gap-y-4 md:pt-[22px]">
+            <button
+              onClick={() => goToSlide(0)}
+              aria-label="Go to slide 1"
+              className={`font-avantt text-[21px] leading-none ${activeSlide === 0 ? "text-neutral-900" : "text-neutral-900/50"}`}
+            >
+              01
+            </button>
+            <div className="relative h-0.5 w-24 bg-zinc-400/60 rounded-full overflow-hidden">
+              <div
+                className="absolute left-0 top-0 h-full bg-neutral-900 rounded-full transition-[width] duration-100"
+                style={{ width: `${activeProgressPercent}%` }}
+              ></div>
             </div>
             <button
-              aria-label="Stop slide rotation"
-              className="items-center bg-neutral-800 caret-transparent flex h-6 justify-center opacity-50 text-center w-6 p-0 rounded-[9999.01px]"
+              onClick={() => goToSlide(1)}
+              aria-label="Go to slide 2"
+              className={`font-avantt text-[21px] leading-none ${activeSlide === 1 ? "text-neutral-900" : "text-neutral-900/50"}`}
             >
-              <img
-                src="https://c.animaapp.com/mlzh4mmjaX4oGl/assets/icon-2.svg"
-                alt="Icon"
-                className="box-border caret-transparent w-[15px]"
-              />
-              <img
-                src="https://c.animaapp.com/mlzh4mmjaX4oGl/assets/icon-3.svg"
-                alt="Icon"
-                className="box-border caret-transparent hidden w-1.5"
-              />
+              02
+            </button>
+            <button
+              aria-label={isAutoPlay ? "Stop slide rotation" : "Start slide rotation"}
+              onClick={() => setIsAutoPlay((previousValue) => !previousValue)}
+              className="items-center bg-neutral-800/40 text-white caret-transparent flex h-8 justify-center text-center w-8 p-0 rounded-[9999.01px]"
+            >
+              {isAutoPlay ? "❚❚" : "▶"}
             </button>
           </div>
         </div>
