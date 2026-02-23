@@ -116,31 +116,31 @@ export const DesktopNav = () => {
           </button>
 
           <div className="pointer-events-none invisible absolute left-0 top-full z-30 w-screen border-t border-[#ececec] bg-[#f7f7f7] opacity-0 shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition duration-150 group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100">
-            <div className="mx-auto grid w-full max-w-[1320px] grid-cols-[minmax(0,1fr)_410px] gap-10 px-10 py-6">
-              <div className="grid grid-cols-2 gap-x-10 gap-y-6">
+            <div className="mx-auto grid w-full max-w-[1280px] grid-cols-[minmax(0,1fr)_430px] gap-8 px-8 py-5">
+              <div className="grid grid-cols-2 gap-x-8 gap-y-5">
                 {shopProducts.map((product) => (
                   <a
                     key={product.name}
                     href={product.href}
-                    className="grid grid-cols-[84px_minmax(0,1fr)] items-start gap-4 rounded-xl p-2 transition hover:bg-white"
+                    className="grid grid-cols-[96px_minmax(0,1fr)] items-start gap-5 rounded-xl px-2 py-1 transition hover:bg-white"
                   >
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="h-[84px] w-[84px] object-contain"
+                      className="h-24 w-24 object-contain"
                     />
 
                     <div>
                       <div className="flex items-center gap-2">
-                        <span className="text-[42px] leading-tight text-[#2d2d2d]">
+                        <span className="text-6xl leading-[1.05] font-medium text-[#2d2d2d]">
                           {product.name}
                         </span>
-                        <span className="rounded bg-[#ececec] px-2 py-1 text-xl text-[#666]">
+                        <span className="rounded bg-[#ececec] px-2 py-1 text-3xl leading-none text-[#666]">
                           {product.tag}
                         </span>
                       </div>
 
-                      <p className="mt-1 text-[32px] leading-snug text-[#666]">
+                      <p className="mt-2 text-5xl leading-[1.25] text-[#666]">
                         {product.description}
                       </p>
                     </div>
@@ -148,27 +148,27 @@ export const DesktopNav = () => {
                 ))}
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {shopQuickLinks.map((link) => (
                   <a
                     key={link.label}
                     href={link.href}
-                    className="flex items-center justify-between rounded-2xl bg-[#ececec] px-5 py-4 transition hover:bg-[#e5e5e5]"
+                    className="flex items-center justify-between rounded-2xl bg-[#ececec] px-4 py-3 transition hover:bg-[#e5e5e5]"
                   >
                     <div className="flex items-center gap-4">
                       <img
                         src={link.image}
                         alt={link.label}
-                        className="h-[68px] w-[68px] rounded-lg object-cover"
+                        className="h-16 w-16 rounded-lg object-cover"
                       />
-                      <span className="text-[42px] leading-tight text-[#2d2d2d]">
+                      <span className="text-6xl leading-[1.05] font-medium text-[#2d2d2d]">
                         {link.label}
                       </span>
                     </div>
 
                     <span
                       aria-hidden="true"
-                      className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#f7f7f7] text-3xl text-[#2d2d2d]"
+                      className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#f7f7f7] text-4xl text-[#2d2d2d]"
                     >
                       →
                     </span>
