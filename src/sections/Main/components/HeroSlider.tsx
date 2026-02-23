@@ -48,7 +48,7 @@ export const HeroSlider = () => {
         <div
           aria-label="Featured content"
           role="region"
-          className="relative box-border caret-transparent block list-none z-[1] overflow-hidden mx-auto md:max-w-[1360px]"
+          className="relative box-border caret-transparent block list-none z-[1] overflow-hidden mx-auto md:overflow-visible"
         >
           <div
             className="relative caret-transparent flex h-full w-full z-[1] transition-transform duration-700 ease-in-out"
