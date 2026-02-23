@@ -118,7 +118,7 @@ export const DesktopNav = () => {
             Shop
           </button>
 
-          <div className="pointer-events-none invisible absolute left-0 top-full z-30 w-screen border-t border-[#ececec] bg-[#f7f7f7] opacity-0 shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition duration-150 group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:visible group-focus-within:opacity-100">
+          <div className="pointer-events-none invisible absolute left-0 top-full z-30 w-screen border-t border-[#ececec] bg-[#f7f7f7] opacity-0 transition duration-150 group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:visible group-focus-within:opacity-100">
             <div className="mx-auto grid w-full max-w-[1320px] grid-cols-[minmax(0,1fr)_420px] gap-8 px-8 py-5">
               <div className="grid grid-cols-2 gap-x-8 gap-y-5">
                 {shopProducts.map((product) => (
@@ -156,7 +156,7 @@ export const DesktopNav = () => {
                   <a
                     key={link.label}
                     href={link.href}
-                    className="flex min-h-[104px] items-center justify-between rounded-2xl bg-[#ececec] px-4 py-3 transition hover:bg-[#e5e5e5]"
+                    className="flex min-h-[104px] items-center justify-between rounded-2xl bg-[#ececec] px-4 py-3 shadow-none transition hover:bg-[#e5e5e5] hover:shadow-none"
                   >
                     <div className="flex items-center gap-4">
                       <img
