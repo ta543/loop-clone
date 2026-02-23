@@ -6,11 +6,11 @@ export const AnnouncementBar = () => {
         role="region"
         className="relative text-white/80 bg-fixed bg-neutral-900 box-border caret-transparent block list-none z-[1] overflow-hidden mx-auto"
       >
-        <div className="relative caret-transparent flex h-full translate-x-[-3052px] w-full z-[1]">
+        <div className="relative caret-transparent flex h-full w-full z-[1]">
           <div
             role="group"
             aria-label="3 / 3"
-            className="relative text-white text-sm font-avanttmedium items-center box-border caret-transparent gap-x-2 flex shrink-0 justify-center tracking-[-0.28px] leading-5 gap-y-2 text-center w-[1526px] p-2"
+            className="relative text-white text-sm font-avant_medium items-center box-border caret-transparent gap-x-2 flex shrink-0 justify-center tracking-[-0.28px] leading-5 gap-y-2 text-center w-full min-w-full p-2"
           >
             <p className="box-border caret-transparent break-words">
               Save up to 20% on Bundles:{" "}
@@ -41,7 +41,7 @@ export const AnnouncementBar = () => {
           <div
             role="group"
             aria-label="1 / 3"
-            className="relative text-white text-sm font-avanttmedium items-center box-border caret-transparent gap-x-2 flex shrink-0 justify-center tracking-[-0.28px] leading-5 gap-y-2 text-center w-[1526px] p-2"
+            className="relative text-white text-sm font-avant_medium items-center box-border caret-transparent gap-x-2 flex shrink-0 justify-center tracking-[-0.28px] leading-5 gap-y-2 text-center w-full min-w-full p-2"
           >
             <p className="box-border caret-transparent break-words">
               Free shipping over 
@@ -68,7 +68,7 @@ export const AnnouncementBar = () => {
           <div
             role="group"
             aria-label="2 / 3"
-            className="relative text-white text-sm font-avanttmedium items-center box-border caret-transparent gap-x-2 flex shrink-0 justify-center tracking-[-0.28px] leading-5 gap-y-2 text-center w-[1526px] p-2"
+            className="relative text-white text-sm font-avant_medium items-center box-border caret-transparent gap-x-2 flex shrink-0 justify-center tracking-[-0.28px] leading-5 gap-y-2 text-center w-full min-w-full p-2"
           >
             <p className="box-border caret-transparent break-words">
               Unlock better sleep - with ultra comfy{" "}
