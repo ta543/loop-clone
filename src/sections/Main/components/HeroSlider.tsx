@@ -9,7 +9,7 @@ export const HeroSlider = () => {
           role="region"
           className="relative box-border caret-transparent block list-none z-[1] overflow-hidden mx-auto md:overflow-visible"
         >
-          <div className="relative caret-transparent flex h-full translate-x-[-1392px] w-full z-[1]">
+          <div className="relative caret-transparent flex h-full translate-x-0 w-full z-[1]">
             <HeroSlide
               ariaLabel="1 / 2"
               variant="video"
@@ -36,8 +36,12 @@ export const HeroSlider = () => {
               ]}
               starRating={5}
               customerCount="Loved by 14M customers"
-              heading="Your life  your volume"
+              heading="Your life your volume"
               description="Lean into everything you love that's loud."
+              ctaText="Find my match (1 min quiz)"
+              ctaUrl="https://www.loopearplugs.com/pages/product-quiz"
+              secondaryCtaText="Discover all earplugs"
+              secondaryCtaUrl="https://www.loopearplugs.com/collections/all"
               showNavigationButtons={true}
             />
             <HeroSlide

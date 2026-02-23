@@ -21,6 +21,8 @@ export type HeroSlideProps = {
   description: string;
   ctaText?: string;
   ctaUrl?: string;
+  secondaryCtaText?: string;
+  secondaryCtaUrl?: string;
   showNavigationButtons?: boolean;
 };
 
@@ -168,16 +170,26 @@ export const HeroSlide = (props: HeroSlideProps) => {
               {props.description}
             </p>
           </div>
-          {props.ctaText && props.ctaUrl && (
-            <div className="box-border caret-transparent gap-x-2 flex flex-col justify-center gap-y-2 text-center md:gap-x-4 md:flex-row md:gap-y-4 md:text-left">
-              <a
-                href={props.ctaUrl}
-                className="relative appearance-none text-white text-[20px] font-medium font-avantt items-center bg-[rgb(37,36,39)] box-border caret-transparent flex h-16 min-h-16 min-w-[122px] justify-center tracking-[-0.6px] leading-normal text-left px-10 py-0 rounded-[9999.01px] transition-shadow duration-100 ease-in"
-              >
-                {props.ctaText}
-              </a>
+          {(props.ctaText && props.ctaUrl) || (props.secondaryCtaText && props.secondaryCtaUrl) ? (
+            <div className="box-border caret-transparent gap-x-2 flex flex-col items-center justify-center gap-y-2 text-center md:gap-x-4 md:flex-row md:items-center md:justify-start md:gap-y-4 md:text-left">
+              {props.ctaText && props.ctaUrl && (
+                <a
+                  href={props.ctaUrl}
+                  className={`relative appearance-none items-center box-border caret-transparent flex h-16 min-h-16 min-w-[122px] justify-center font-avantt text-[20px] font-medium tracking-[-0.6px] leading-normal px-10 py-0 rounded-[9999.01px] transition-shadow duration-100 ease-in ${props.variant === "video" ? "bg-white text-neutral-900" : "bg-[rgb(37,36,39)] text-white"}`}
+                >
+                  {props.ctaText}
+                </a>
+              )}
+              {props.secondaryCtaText && props.secondaryCtaUrl && (
+                <a
+                  href={props.secondaryCtaUrl}
+                  className={`box-border caret-transparent inline-block font-avantt text-[20px] font-medium tracking-[-0.6px] leading-normal underline underline-offset-4 ${props.variant === "video" ? "text-white" : "text-neutral-900"}`}
+                >
+                  {props.secondaryCtaText}
+                </a>
+              )}
             </div>
-          )}
+          ) : null}
         </div>
       </div>
     </div>
