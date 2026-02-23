@@ -48,7 +48,7 @@ export const HeroSlider = () => {
         <div
           aria-label="Featured content"
           role="region"
-          className="relative box-border caret-transparent block list-none z-[1] overflow-hidden mx-auto md:overflow-visible"
+          className="relative box-border caret-transparent block list-none z-[1] overflow-hidden mx-auto md:max-w-[1360px]"
         >
           <div
             className="relative caret-transparent flex h-full w-full z-[1] transition-transform duration-700 ease-in-out"
@@ -116,13 +116,15 @@ export const HeroSlider = () => {
               <span className="text-[26px] leading-none">←</span>
             </button>
           )}
-          <button
-            aria-label="Next slide"
-            onClick={() => goToSlide((activeSlide + 1) % slidesCount)}
-            className="hidden md:absolute md:appearance-none md:text-neutral-800 md:items-center md:bg-white md:shadow-[rgba(0,0,0,0.05)_0px_0px_10px_0px] md:flex md:h-16 md:justify-center md:translate-y-[-50%] md:w-16 md:z-[4] md:rounded-[9999.01px] md:-right-8 md:top-2/4"
-          >
-            <span className="text-[26px] leading-none">→</span>
-          </button>
+          {activeSlide < slidesCount - 1 && (
+            <button
+              aria-label="Next slide"
+              onClick={() => goToSlide((activeSlide + 1) % slidesCount)}
+              className="hidden md:absolute md:appearance-none md:text-neutral-800 md:items-center md:bg-white md:shadow-[rgba(0,0,0,0.05)_0px_0px_10px_0px] md:flex md:h-16 md:justify-center md:translate-y-[-50%] md:w-16 md:z-[4] md:rounded-[9999.01px] md:-right-8 md:top-2/4"
+            >
+              <span className="text-[26px] leading-none">→</span>
+            </button>
+          )}
 
           <div className="items-center box-border caret-transparent flex justify-center gap-4 pt-[17px] md:pt-[22px]">
             <button
