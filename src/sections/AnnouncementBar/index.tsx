@@ -35,7 +35,7 @@ export const AnnouncementBar = () => {
           <div
             role="group"
             aria-label="2 / 3"
-            className="relative text-white text-sm font-avantt font-semibold items-center box-border caret-transparent gap-x-2 flex shrink-0 justify-center tracking-[-0.28px] leading-5 gap-y-2 text-center h-10 w-[901px] p-2"
+            className="relative text-white text-sm font-avanttregular font-normal items-center box-border caret-transparent gap-x-2 flex shrink-0 justify-center tracking-[-0.28px] leading-5 gap-y-2 text-center h-10 w-[901px] p-2"
           >
             <p className="box-border caret-transparent break-words">
               Unlock better sleep - with ultra comfy{" "}
