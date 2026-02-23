@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { X } from "lucide-react";
 import { CartUpsell } from "@/components/CartDialog/components/CartUpsell";
 
@@ -6,19 +7,40 @@ type CartDialogProps = {
   onClose: () => void;
 };
 
+const ANIMATION_MS = 300;
+
 export const CartDialog = ({ isOpen, onClose }: CartDialogProps) => {
-  if (!isOpen) {
+  const [shouldRender, setShouldRender] = useState(isOpen);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      setShouldRender(true);
+      requestAnimationFrame(() => setIsVisible(true));
+      return;
+    }
+
+    setIsVisible(false);
+    const timer = window.setTimeout(() => setShouldRender(false), ANIMATION_MS);
+    return () => window.clearTimeout(timer);
+  }, [isOpen]);
+
+  if (!shouldRender) {
     return null;
   }
 
   return (
     <aside
       aria-label="Cart drawer"
-      className="fixed inset-0 z-50 flex justify-end bg-black/30"
+      className={`fixed inset-0 z-50 flex justify-end bg-black/30 transition-opacity duration-300 ${
+        isVisible ? "opacity-100" : "opacity-0"
+      }`}
       onClick={onClose}
     >
       <section
-        className="flex h-full w-full max-w-[460px] flex-col overflow-hidden bg-[#f6f6f6] text-neutral-800 shadow-xl"
+        className={`flex h-full w-full max-w-[460px] flex-col overflow-hidden bg-[#f6f6f6] text-neutral-800 shadow-xl transition-transform duration-300 ease-out ${
+          isVisible ? "translate-x-0" : "translate-x-full"
+        }`}
         onClick={(event) => event.stopPropagation()}
       >
         <header className="flex items-center justify-between px-6 pb-6 pt-7">
