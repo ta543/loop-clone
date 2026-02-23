@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import { HeroSlide } from "@/sections/Main/components/HeroSlide";
 
@@ -42,6 +42,29 @@ export const HeroSlider = () => {
     setProgressMs(0);
   };
 
+  const dragStartX = useRef<number | null>(null);
+
+  const handleDragStart = (clientX: number) => {
+    dragStartX.current = clientX;
+  };
+
+  const handleDragEnd = (clientX: number) => {
+    if (dragStartX.current === null) return;
+
+    const deltaX = clientX - dragStartX.current;
+    const swipeThreshold = 60;
+
+    if (deltaX <= -swipeThreshold && activeSlide < slidesCount - 1) {
+      goToSlide(activeSlide + 1);
+    }
+
+    if (deltaX >= swipeThreshold && activeSlide > 0) {
+      goToSlide(activeSlide - 1);
+    }
+
+    dragStartX.current = null;
+  };
+
   return (
     <div className="box-border caret-transparent w-full overflow-hidden mb-6 md:mb-12">
       <div className="box-border caret-transparent w-full mx-auto px-4 md:px-10">
@@ -49,6 +72,13 @@ export const HeroSlider = () => {
           aria-label="Featured content"
           role="region"
           className="relative box-border caret-transparent block list-none z-[1] overflow-hidden mx-auto md:overflow-visible"
+          onMouseDown={(event) => handleDragStart(event.clientX)}
+          onMouseUp={(event) => handleDragEnd(event.clientX)}
+          onMouseLeave={() => {
+            dragStartX.current = null;
+          }}
+          onTouchStart={(event) => handleDragStart(event.touches[0].clientX)}
+          onTouchEnd={(event) => handleDragEnd(event.changedTouches[0].clientX)}
         >
           <div
             className="relative caret-transparent flex h-full w-full z-[1] transition-transform duration-700 ease-in-out"
