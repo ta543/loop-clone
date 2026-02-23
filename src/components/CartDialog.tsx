@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { X } from "lucide-react";
 import { CartUpsell } from "@/components/CartDialog/components/CartUpsell";
 
@@ -12,17 +12,43 @@ const ANIMATION_MS = 700;
 export const CartDialog = ({ isOpen, onClose }: CartDialogProps) => {
   const [shouldRender, setShouldRender] = useState(isOpen);
   const [isVisible, setIsVisible] = useState(false);
+  const closeTimerRef = useRef<number | null>(null);
+  const openTimerRef = useRef<number | null>(null);
 
   useEffect(() => {
+    return () => {
+      if (openTimerRef.current) {
+        window.clearTimeout(openTimerRef.current);
+      }
+
+      if (closeTimerRef.current) {
+        window.clearTimeout(closeTimerRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (openTimerRef.current) {
+      window.clearTimeout(openTimerRef.current);
+    }
+
+    if (closeTimerRef.current) {
+      window.clearTimeout(closeTimerRef.current);
+    }
+
     if (isOpen) {
       setShouldRender(true);
-      requestAnimationFrame(() => setIsVisible(true));
+      setIsVisible(false);
+      openTimerRef.current = window.setTimeout(() => {
+        setIsVisible(true);
+      }, 24);
       return;
     }
 
     setIsVisible(false);
-    const timer = window.setTimeout(() => setShouldRender(false), ANIMATION_MS);
-    return () => window.clearTimeout(timer);
+    closeTimerRef.current = window.setTimeout(() => {
+      setShouldRender(false);
+    }, ANIMATION_MS);
   }, [isOpen]);
 
   if (!shouldRender) {
