@@ -144,9 +144,17 @@ export const HeroSlider = () => {
             <button
               aria-label={isAutoPlay ? "Stop slide rotation" : "Start slide rotation"}
               onClick={() => setIsAutoPlay((previousValue) => !previousValue)}
-              className="items-center bg-neutral-400 text-white caret-transparent flex h-12 justify-center text-center w-12 p-0 rounded-[9999.01px] md:h-8 md:w-8"
+              className="group items-center bg-neutral-400 text-white caret-transparent flex h-12 justify-center text-center w-12 p-0 rounded-[9999.01px] md:h-8 md:w-8"
             >
-              <span className="text-[18px] leading-none md:text-xs">{isAutoPlay ? "❚❚" : "▶"}</span>
+              {isAutoPlay ? (
+                <>
+                  <span className="block h-4 w-1 bg-white rounded-[1px] md:h-2.5"></span>
+                  <span className="block h-4 w-1 bg-white rounded-[1px] ml-1 md:h-2.5"></span>
+                  <span className="hidden group-active:block h-3 w-3 bg-white ml-[-7px] rounded-[1px] md:h-2 md:w-2 md:ml-[-5px]"></span>
+                </>
+              ) : (
+                <span className="block w-0 h-0 border-y-[6px] border-y-transparent border-l-[10px] border-l-white ml-1 md:border-y-[4px] md:border-l-[7px]"></span>
+              )}
             </button>
           </div>
         </div>
