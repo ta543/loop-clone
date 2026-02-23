@@ -3,13 +3,17 @@ import { Logo } from "@/components/Logo";
 import { DesktopNav } from "@/sections/Header/components/DesktopNav";
 import { HeaderIcons } from "@/sections/Header/components/HeaderIcons";
 
-export const Navbar = () => {
+type NavbarProps = {
+  onOpenCart: () => void;
+};
+
+export const Navbar = ({ onOpenCart }: NavbarProps) => {
   return (
     <header className="items-center box-border caret-transparent gap-x-[normal] grid [grid-template-areas:'left-icon_heading_icons'] grid-cols-[1fr_2fr_1fr] justify-normal w-full mx-auto px-4 md:gap-x-0 md:flex md:justify-between md:px-10">
       <MobileMenuButton />
       <Logo />
       <DesktopNav />
-      <HeaderIcons />
+      <HeaderIcons onOpenCart={onOpenCart} />
     </header>
   );
 };
