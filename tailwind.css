@@ -1,0 +1,361 @@
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"RomanaBT","weight":"400","style":"normal","allowsCrossOrigin":true}] */
+  font-family: 'RomanaBT';
+  src: url('local("RomanaBT"), local("RomanaBT"), url("https://cdn.shopify.com/s/files/1/1442/3288/files/RomanaBT-Roman.woff") format("woff")');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"Binance","weight":"400","style":"normal","allowsCrossOrigin":false}] */
+  font-family: 'Binance';
+  src: url("chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/fonts/BinancePlex-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"Binance","weight":"500","style":"normal","allowsCrossOrigin":false}] */
+  font-family: 'Binance';
+  src: url("chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/fonts/BinancePlex-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"Binance","weight":"600","style":"normal","allowsCrossOrigin":false}] */
+  font-family: 'Binance';
+  src: url("chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/fonts/BinancePlex-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"DMSans","allowsCrossOrigin":false}] */
+  font-family: 'DMSans';
+  src: url("chrome-extension://meimoidfecamngeoanhnpdjjdcefoldn/assets/fonts/DMSans-Regular.ttf");
+  
+  
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"PoppinsMedium","allowsCrossOrigin":false}] */
+  font-family: 'PoppinsMedium';
+  src: url("chrome-extension://meimoidfecamngeoanhnpdjjdcefoldn/assets/fonts/Poppins-Medium.otf");
+  
+  
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"PoppinsRegular","allowsCrossOrigin":false}] */
+  font-family: 'PoppinsRegular';
+  src: url("chrome-extension://meimoidfecamngeoanhnpdjjdcefoldn/assets/fonts/Poppins-Regular.otf");
+  
+  
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url("chrome-extension://meimoidfecamngeoanhnpdjjdcefoldn/assets/fonts/Roboto-Regular.ttf");
+  
+  
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url("chrome-extension://meimoidfecamngeoanhnpdjjdcefoldn/assets/fonts/Inter-VariableFont_opsz,wght.ttf");
+  
+  
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"GTStandard-M","weight":"450","style":"normal","allowsCrossOrigin":true}] */
+  font-family: 'GTStandard-M';
+  src: url("https://cdn.shopify.com/shop-assets/static_uploads/shoplift/GTStandard-MRegular.woff2") format("woff2");
+  font-weight: 450;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"GTStandard-M","weight":"500","style":"normal","allowsCrossOrigin":true}] */
+  font-family: 'GTStandard-M';
+  src: url("https://cdn.shopify.com/shop-assets/static_uploads/shoplift/GTStandard-MMedium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"GTStandard-M","weight":"600","style":"normal","allowsCrossOrigin":true}] */
+  font-family: 'GTStandard-M';
+  src: url("https://cdn.shopify.com/shop-assets/static_uploads/shoplift/GTStandard-MSemibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"Avant_Medium","weight":"600","style":"normal","allowsCrossOrigin":true}] */
+  font-family: 'Avant_Medium';
+  src: url("https://cdn.shopify.com/s/files/1/0514/3740/4334/files/Avantt-medium.woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"Avant_Semi_Bold","weight":"800","style":"normal","allowsCrossOrigin":true}] */
+  font-family: 'Avant_Semi_Bold';
+  src: url("https://cdn.shopify.com/s/files/1/1442/3288/files/Avantt-Regular.woff2");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"AvanttMedium","weight":"600","style":"normal","allowsCrossOrigin":true}] */
+  font-family: 'AvanttMedium';
+  src: url("https://cdn.shopify.com/s/files/1/0514/3740/4334/files/Avantt-medium.woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"AvanttRegular","weight":"400","style":"normal","allowsCrossOrigin":true}] */
+  font-family: 'AvanttRegular';
+  src: url("https://cdn.shopify.com/s/files/1/1442/3288/files/Avantt-Regular.woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"FKScreamer_Medium","weight":"500","style":"normal","allowsCrossOrigin":true}] */
+  font-family: 'FKScreamer_Medium';
+  src: url("https://cdn.shopify.com/s/files/1/1442/3288/files/FKScreamer-Medium.woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"Graphik","weight":"300","style":"normal","allowsCrossOrigin":true}] */
+  font-family: 'Graphik';
+  src: url("https://cdn.shopify.com/s/files/1/0851/4276/files/GraphikLight.woff?v=1697535151");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"Graphik","weight":"300","style":"italic","allowsCrossOrigin":true}] */
+  font-family: 'Graphik';
+  src: url("https://cdn.shopify.com/s/files/1/0851/4276/files/GraphikLightItalic.woff?v=1697535150");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"Graphik","weight":"500","style":"normal","allowsCrossOrigin":true}] */
+  font-family: 'Graphik';
+  src: url("https://cdn.shopify.com/s/files/1/0851/4276/files/GraphikMedium.woff?v=1697535150");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"Graphik","weight":"500","style":"italic","allowsCrossOrigin":true}] */
+  font-family: 'Graphik';
+  src: url("https://cdn.shopify.com/s/files/1/0851/4276/files/GraphikMediumItalic.woff?v=1697535151");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"Kanit-Klaviyo-Hosted","weight":"400","style":"italic","allowsCrossOrigin":true}] */
+  font-family: 'Kanit-Klaviyo-Hosted';
+  src: url("https://static.klaviyo.com/onsite/hosted-fonts/Kanit/latin/kanit_latin_italic_400.woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"Kanit-Klaviyo-Hosted","weight":"700","style":"italic","allowsCrossOrigin":true}] */
+  font-family: 'Kanit-Klaviyo-Hosted';
+  src: url("https://static.klaviyo.com/onsite/hosted-fonts/Kanit/latin/kanit_latin_italic_700.woff2");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"Kanit-Klaviyo-Hosted","weight":"400","style":"normal","allowsCrossOrigin":true}] */
+  font-family: 'Kanit-Klaviyo-Hosted';
+  src: url("https://static.klaviyo.com/onsite/hosted-fonts/Kanit/latin/kanit_latin_regular_400.woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"Kanit-Klaviyo-Hosted","weight":"700","style":"normal","allowsCrossOrigin":true}] */
+  font-family: 'Kanit-Klaviyo-Hosted';
+  src: url("https://static.klaviyo.com/onsite/hosted-fonts/Kanit/latin/kanit_latin_regular_700.woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"Poppins-Klaviyo-Hosted","weight":"400","style":"italic","allowsCrossOrigin":true}] */
+  font-family: 'Poppins-Klaviyo-Hosted';
+  src: url("https://static.klaviyo.com/onsite/hosted-fonts/Poppins/latin/poppins_latin_italic_400.woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"Poppins-Klaviyo-Hosted","weight":"700","style":"italic","allowsCrossOrigin":true}] */
+  font-family: 'Poppins-Klaviyo-Hosted';
+  src: url("https://static.klaviyo.com/onsite/hosted-fonts/Poppins/latin/poppins_latin_italic_700.woff2");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"Poppins-Klaviyo-Hosted","weight":"400","style":"normal","allowsCrossOrigin":true}] */
+  font-family: 'Poppins-Klaviyo-Hosted';
+  src: url("https://static.klaviyo.com/onsite/hosted-fonts/Poppins/latin/poppins_latin_regular_400_2.woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"Poppins-Klaviyo-Hosted","weight":"700","style":"normal","allowsCrossOrigin":true}] */
+  font-family: 'Poppins-Klaviyo-Hosted';
+  src: url("https://static.klaviyo.com/onsite/hosted-fonts/Poppins/latin/poppins_latin_regular_700.woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"Romana BT","weight":"400","style":"normal","allowsCrossOrigin":true}] */
+  font-family: 'Romana BT';
+  src: url("https://cdn.shopify.com/s/files/1/1442/3288/files/RomanaBT-Roman_2.ttf?v=1761135066");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"FKScreamer","weight":"500","style":"normal","allowsCrossOrigin":true}] */
+  font-family: 'FKScreamer';
+  src: url('local("FKScreamer Medium"), local("FKScreamer-Medium"), url("https://cdn.shopify.com/s/files/1/0514/3740/4334/files/FKScreamer-medium_6b5f6b78-30dc-44c2-b655-a2fe7aadd984.woff2") format("woff2")');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"Avantt","weight":"400","style":"normal","allowsCrossOrigin":true}] */
+  font-family: 'Avantt';
+  src: url('local("Avantt Medium"), local("Avantt-Medium"), url("https://cdn.shopify.com/s/files/1/0514/3740/4334/files/Avantt-medium.woff2") format("woff2")');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"Avantt","weight":"500","style":"normal","allowsCrossOrigin":true}] */
+  font-family: 'Avantt';
+  src: url('local("Avantt Medium"), local("Avantt-Medium"), url("https://cdn.shopify.com/s/files/1/0514/3740/4334/files/Avantt-medium.woff2") format("woff2")');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"Avantt","weight":"600","style":"normal","allowsCrossOrigin":true}] */
+  font-family: 'Avantt';
+  src: url('local("Avantt Medium"), local("Avantt-Medium"), url("https://cdn.shopify.com/s/files/1/0514/3740/4334/files/Avantt-medium.woff2") format("woff2")');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"BespokeSerif","weight":"300","style":"italic","allowsCrossOrigin":false}] */
+  font-family: 'BespokeSerif';
+  src: url('local("BespokeSerif LightItalic"), local("BespokeSerif-LightItalic"), url("/cdn/shop/files/BespokeSerif-LightItalic.woff2") format("woff2"), url("/cdn/shop/files/BespokeSerif-LightItalic.woff") format("woff")');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@tailwind base;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --card: transparent;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --card: transparent;
+    --card-foreground: 213 31% 91%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
