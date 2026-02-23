@@ -111,36 +111,39 @@ export const DesktopNav = () => {
         className="box-border caret-transparent inline-flex flex-wrap list-none pl-0"
       >
         <li className="group static items-center box-border caret-transparent flex min-h-0 min-w-0 py-0 md:min-h-[auto] md:min-w-[auto] md:py-2">
-          <button type="button" className="text-neutral-900 items-center bg-transparent caret-transparent flex text-center underline-offset-[3px] hover:underline p-3">
+          <button
+            type="button"
+            className="text-neutral-900 items-center bg-transparent caret-transparent flex text-center underline underline-offset-[3px] p-3"
+          >
             Shop
           </button>
 
           <div className="pointer-events-none invisible absolute left-0 top-full z-30 w-screen border-t border-[#ececec] bg-[#f7f7f7] opacity-0 shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition duration-150 group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100">
-            <div className="mx-auto grid w-full max-w-[1280px] grid-cols-[minmax(0,1fr)_430px] gap-8 px-8 py-5">
-              <div className="grid grid-cols-2 gap-x-8 gap-y-5">
+            <div className="mx-auto grid w-full max-w-[1320px] grid-cols-[minmax(0,1fr)_420px] gap-10 px-8 py-10">
+              <div className="grid grid-cols-2 gap-x-12 gap-y-8 pr-2">
                 {shopProducts.map((product) => (
                   <a
                     key={product.name}
                     href={product.href}
-                    className="grid grid-cols-[96px_minmax(0,1fr)] items-start gap-5 rounded-xl px-2 py-1 transition hover:bg-white"
+                    className="grid grid-cols-[84px_minmax(0,1fr)] items-start gap-4 rounded-xl px-2 py-2 transition hover:bg-white/80"
                   >
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="h-24 w-24 object-contain"
+                      className="h-[76px] w-[76px] object-contain"
                     />
 
-                    <div>
+                    <div className="pt-1">
                       <div className="flex items-center gap-2">
-                        <span className="text-6xl leading-[1.05] font-medium text-[#2d2d2d]">
+                        <span className="text-[40px] leading-[1.08] font-medium text-[#2d2d2d]">
                           {product.name}
                         </span>
-                        <span className="rounded bg-[#ececec] px-2 py-1 text-3xl leading-none text-[#666]">
+                        <span className="rounded-md bg-[#ececec] px-2 py-1 text-[22px] leading-none text-[#666]">
                           {product.tag}
                         </span>
                       </div>
 
-                      <p className="mt-2 text-5xl leading-[1.25] text-[#666]">
+                      <p className="mt-2 text-[31px] leading-[1.3] text-[#666]">
                         {product.description}
                       </p>
                     </div>
@@ -148,27 +151,27 @@ export const DesktopNav = () => {
                 ))}
               </div>
 
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {shopQuickLinks.map((link) => (
                   <a
                     key={link.label}
                     href={link.href}
-                    className="flex items-center justify-between rounded-2xl bg-[#ececec] px-4 py-3 transition hover:bg-[#e5e5e5]"
+                    className="flex items-center justify-between rounded-3xl bg-[#ececec] px-5 py-4 transition hover:bg-[#e5e5e5]"
                   >
                     <div className="flex items-center gap-4">
                       <img
                         src={link.image}
                         alt={link.label}
-                        className="h-16 w-16 rounded-lg object-cover"
+                        className="h-[84px] w-[84px] rounded-xl object-cover"
                       />
-                      <span className="text-6xl leading-[1.05] font-medium text-[#2d2d2d]">
+                      <span className="text-[44px] leading-[1.1] font-medium text-[#2d2d2d]">
                         {link.label}
                       </span>
                     </div>
 
                     <span
                       aria-hidden="true"
-                      className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#f7f7f7] text-4xl text-[#2d2d2d]"
+                      className="inline-flex h-[62px] w-[62px] items-center justify-center rounded-full bg-[#f7f7f7] text-[36px] text-[#2d2d2d]"
                     >
                       →
                     </span>
