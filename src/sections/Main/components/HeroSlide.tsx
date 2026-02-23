@@ -21,6 +21,8 @@ export type HeroSlideProps = {
   description: string;
   ctaText?: string;
   ctaUrl?: string;
+  secondaryCtaText?: string;
+  secondaryCtaUrl?: string;
   showNavigationButtons?: boolean;
 };
 
@@ -33,7 +35,7 @@ export const HeroSlide = (props: HeroSlideProps) => {
     >
       <div className="relative box-border caret-transparent flex flex-col h-full min-h-[700px] w-full px-4 md:flex-row md:min-h-[620px] md:pl-16">
         <div
-          className={`absolute box-border caret-transparent h-full w-full overflow-hidden rounded-xl left-0 top-0 md:rounded-2xl ${props.variant === "video" ? "bg-black opacity-100 md:opacity-50" : "bg-stone-50"}`}
+          className={`absolute box-border caret-transparent h-full w-full overflow-hidden rounded-xl left-0 top-0 md:rounded-2xl ${props.variant === "video" ? "bg-black" : "bg-stone-50"}`}
         >
           {props.hasVideo && props.showNavigationButtons && (
             <>
@@ -101,6 +103,9 @@ export const HeroSlide = (props: HeroSlideProps) => {
               </video>
             </div>
           )}
+          {props.variant === "video" && (
+            <div className="absolute inset-0 bg-black/40 md:bg-black/55 z-[1]"></div>
+          )}
           {props.hasImage && (
             <div className="box-border caret-transparent absolute h-[120%] left-[-10%] top-[-10%] w-[120%] overflow-hidden">
               <picture className="box-border caret-transparent h-full object-cover w-full">
@@ -114,7 +119,7 @@ export const HeroSlide = (props: HeroSlideProps) => {
           )}
         </div>
         {props.productImageUrl && (
-          <div className="box-border caret-transparent w-auto md:w-6/12 order-none -mt-4 mb-0 md:order-1 md:-mt-6 md:mb-4">
+          <div className="relative z-[2] box-border caret-transparent w-auto md:w-6/12 order-none -mt-4 mb-0 md:order-1 md:-mt-6 md:mb-4">
             <picture className="box-border caret-transparent">
               <img
                 src={props.productImageUrl}
@@ -125,7 +130,7 @@ export const HeroSlide = (props: HeroSlideProps) => {
           </div>
         )}
         <div
-          className={`box-border caret-transparent w-auto md:w-6/12 ${props.variant === "video" ? "relative text-white items-center flex flex-col h-full justify-end text-center py-4 md:items-start md:justify-center md:text-left md:py-16" : "relative items-center box-border caret-transparent flex flex-col h-full justify-end text-center w-auto py-4 md:items-start md:justify-center md:text-left md:w-6/12 md:py-16"}`}
+          className={`box-border caret-transparent w-auto md:w-6/12 ${props.variant === "video" ? "relative z-[2] text-white items-center flex flex-col h-full justify-end text-center py-4 md:items-start md:justify-center md:text-left md:py-16" : "relative items-center box-border caret-transparent flex flex-col h-full justify-end text-center w-auto py-4 md:items-start md:justify-center md:text-left md:w-6/12 md:py-16"}`}
         >
           <div className="box-border caret-transparent text-center md:text-left">
             <div
@@ -168,16 +173,26 @@ export const HeroSlide = (props: HeroSlideProps) => {
               {props.description}
             </p>
           </div>
-          {props.ctaText && props.ctaUrl && (
-            <div className="box-border caret-transparent gap-x-2 flex flex-col justify-center gap-y-2 text-center md:gap-x-4 md:flex-row md:gap-y-4 md:text-left">
-              <a
-                href={props.ctaUrl}
-                className="relative text-white items-center bg-neutral-800 box-border caret-transparent flex justify-center leading-[normal] min-h-16 min-w-[122px] text-center px-10 rounded-[9999.01px] md:text-left"
-              >
-                {props.ctaText}
-              </a>
+          {(props.ctaText && props.ctaUrl) || (props.secondaryCtaText && props.secondaryCtaUrl) ? (
+            <div className="box-border caret-transparent gap-x-2 flex flex-col items-center justify-center gap-y-2 text-center md:gap-x-4 md:flex-row md:items-center md:justify-start md:gap-y-4 md:text-left">
+              {props.ctaText && props.ctaUrl && (
+                <a
+                  href={props.ctaUrl}
+                  className={`relative appearance-none items-center box-border caret-transparent flex h-16 min-h-16 min-w-[122px] justify-center font-avantt text-[20px] font-medium tracking-[-0.6px] leading-normal px-10 py-0 rounded-[9999.01px] transition-shadow duration-100 ease-in ${props.variant === "video" ? "bg-white text-neutral-900" : "bg-[rgb(37,36,39)] text-white"}`}
+                >
+                  {props.ctaText}
+                </a>
+              )}
+              {props.secondaryCtaText && props.secondaryCtaUrl && (
+                <a
+                  href={props.secondaryCtaUrl}
+                  className={`box-border caret-transparent inline-block font-avantt text-[20px] font-medium tracking-[-0.6px] leading-normal underline underline-offset-4 ${props.variant === "video" ? "text-white" : "text-neutral-900"}`}
+                >
+                  {props.secondaryCtaText}
+                </a>
+              )}
             </div>
-          )}
+          ) : null}
         </div>
       </div>
     </div>
