@@ -113,7 +113,7 @@ export const DesktopNav = () => {
         <li className="group static items-center box-border caret-transparent flex min-h-0 min-w-0 py-0 md:min-h-[auto] md:min-w-[auto] md:py-2">
           <button
             type="button"
-            className="text-neutral-900 items-center bg-transparent caret-transparent flex text-center underline underline-offset-[3px] p-3"
+            className="text-neutral-900 items-center bg-transparent caret-transparent flex text-center underline-offset-[3px] hover:underline p-3"
           >
             Shop
           </button>
