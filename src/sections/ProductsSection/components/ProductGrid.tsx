@@ -1,9 +1,56 @@
+import { useEffect, useRef, useState } from "react";
 import { ProductCard } from "@/components/ProductCard";
 
 export const ProductGrid = () => {
+  const carouselRef = useRef<HTMLDivElement | null>(null);
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(true);
+
+  const updateScrollState = () => {
+    if (!carouselRef.current) {
+      return;
+    }
+
+    const { scrollLeft, clientWidth, scrollWidth } = carouselRef.current;
+
+    setCanScrollPrev(scrollLeft > 4);
+    setCanScrollNext(scrollLeft + clientWidth < scrollWidth - 4);
+  };
+
+  useEffect(() => {
+    updateScrollState();
+
+    const handleResize = () => updateScrollState();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const scrollCarousel = (direction: "prev" | "next") => {
+    if (!carouselRef.current) {
+      return;
+    }
+
+    const firstCard = carouselRef.current.querySelector("[role='group']");
+    const cardWidth = firstCard ? (firstCard as HTMLElement).offsetWidth : 0;
+    const gap = 16;
+    const amount = cardWidth + gap;
+
+    carouselRef.current.scrollBy({
+      left: direction === "next" ? amount : -amount,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <div className="relative box-border caret-transparent block list-none w-[calc(100%_+_32px)] z-[1] overflow-hidden -ml-4 mr-auto md:w-full md:overflow-visible md:ml-0">
-      <div className="relative box-border caret-transparent gap-x-4 flex h-full gap-y-4 w-full z-[1] overflow-auto px-4 scroll-pl-4 scroll-pr-[auto] scroll-py-[auto] md:px-0 md:scroll-p-0">
+    <div className="relative box-border caret-transparent block list-none w-[calc(100%_+_32px)] z-[1] overflow-hidden -ml-4 mr-auto md:w-full md:ml-0">
+      <div
+        ref={carouselRef}
+        onScroll={updateScrollState}
+        className="relative box-border caret-transparent gap-x-4 flex h-full gap-y-4 w-full z-[1] overflow-x-auto overflow-y-hidden px-4 scroll-pl-4 scroll-pr-[auto] scroll-py-[auto] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:px-0 md:scroll-p-0"
+      >
         <ProductCard
           ariaLabel="1 / 7"
           productUrl="https://www.loopearplugs.com/products/switch?variant=49728323584335"
@@ -307,17 +354,32 @@ export const ProductGrid = () => {
           description="An upgrade to Engage 2, with extra noise reduction on demand"
         />
       </div>
+      <button
+        type="button"
+        aria-label="Previous slide"
+        onClick={() => scrollCarousel("prev")}
+        className={`absolute text-neutral-800 items-center bg-white shadow-[rgba(0,0,0,0.05)_0px_0px_10px_0px] flex h-12 justify-center -translate-y-1/2 w-12 z-[4] rounded-[9999.01px] left-2 top-2/4 md:left-[-24px] ${canScrollPrev ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+      >
+        <img
+          src="https://c.animaapp.com/mlzh4mmjaX4oGl/assets/icon-14.svg"
+          alt="Icon"
+          className="h-4 w-[18px] rotate-180"
+        />
+      </button>
+      <button
+        type="button"
+        aria-label="Next slide"
+        onClick={() => scrollCarousel("next")}
+        className={`absolute text-neutral-800 items-center bg-white shadow-[rgba(0,0,0,0.05)_0px_0px_10px_0px] flex h-12 justify-center -translate-y-1/2 w-12 z-[4] rounded-[9999.01px] right-2 top-2/4 md:right-[-24px] ${canScrollNext ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+      >
+        <img
+          src="https://c.animaapp.com/mlzh4mmjaX4oGl/assets/icon-14.svg"
+          alt="Icon"
+          className="h-4 w-[18px]"
+        />
+      </button>
+
       <div className="items-center box-border caret-transparent gap-x-2 flex justify-center gap-y-2 pt-[17px] md:gap-x-4 md:gap-y-4">
-        <button
-          aria-label="Next slide"
-          className="static text-neutral-900/80 [align-items:normal] bg-transparent shadow-none caret-transparent hidden h-auto justify-normal text-center transform-none w-auto z-auto p-0 rounded-none -right-6 top-auto md:absolute md:appearance-none md:text-neutral-800 md:items-center md:bg-white md:shadow-[rgba(0,0,0,0.05)_0px_0px_10px_0px] md:flex md:h-12 md:justify-center md:translate-y-[-50.0%] md:w-12 md:z-[4] md:rounded-[9999.01px] md:top-2/4"
-        >
-          <img
-            src="https://c.animaapp.com/mlzh4mmjaX4oGl/assets/icon-14.svg"
-            alt="Icon"
-            className="text-neutral-900/80 box-border caret-transparent h-auto w-[15px] md:text-neutral-800 md:h-4 md:w-[18px]"
-          />
-        </button>
         <div className="relative items-center box-border caret-transparent gap-x-0 flex h-[41px] justify-center gap-y-0 w-max z-10">
           <span
             role="button"
