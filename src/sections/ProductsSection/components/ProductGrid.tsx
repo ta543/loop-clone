@@ -360,11 +360,27 @@ export const ProductGrid = () => {
         onClick={() => scrollCarousel("prev")}
         className={`absolute text-neutral-800 items-center bg-white shadow-[rgba(0,0,0,0.05)_0px_0px_10px_0px] flex h-12 justify-center -translate-y-1/2 w-12 z-[4] rounded-[9999.01px] left-2 top-2/4 md:left-[-24px] ${canScrollPrev ? "opacity-100" : "opacity-0 pointer-events-none"}`}
       >
-        <img
-          src="https://c.animaapp.com/mlzh4mmjaX4oGl/assets/icon-14.svg"
-          alt="Icon"
-          className="h-4 w-[18px] rotate-180"
-        />
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 20 20"
+          className="h-5 w-5"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M13.5 4.5L8 10L13.5 15.5"
+            stroke="currentColor"
+            strokeWidth="1.75"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M8.5 10H15.5"
+            stroke="currentColor"
+            strokeWidth="1.75"
+            strokeLinecap="round"
+          />
+        </svg>
       </button>
       <button
         type="button"
@@ -372,11 +388,27 @@ export const ProductGrid = () => {
         onClick={() => scrollCarousel("next")}
         className={`absolute text-neutral-800 items-center bg-white shadow-[rgba(0,0,0,0.05)_0px_0px_10px_0px] flex h-12 justify-center -translate-y-1/2 w-12 z-[4] rounded-[9999.01px] right-2 top-2/4 md:right-[-24px] ${canScrollNext ? "opacity-100" : "opacity-0 pointer-events-none"}`}
       >
-        <img
-          src="https://c.animaapp.com/mlzh4mmjaX4oGl/assets/icon-14.svg"
-          alt="Icon"
-          className="h-4 w-[18px]"
-        />
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 20 20"
+          className="h-5 w-5"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6.5 4.5L12 10L6.5 15.5"
+            stroke="currentColor"
+            strokeWidth="1.75"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M4.5 10H11.5"
+            stroke="currentColor"
+            strokeWidth="1.75"
+            strokeLinecap="round"
+          />
+        </svg>
       </button>
 
       <div className="items-center box-border caret-transparent gap-x-2 flex justify-center gap-y-2 pt-[17px] md:gap-x-4 md:gap-y-4">
