@@ -92,7 +92,10 @@ export const ProductCard = (props: ProductCardProps) => {
                         className="box-border caret-transparent w-6 rounded-[9999.01px]"
                       >
                         <label
-                          className={`relative text-black text-sm font-normal bg-[url('${color.backgroundImageUrl}')] bg-no-repeat bg-size-[100%] ${color.isSelected ? "shadow-[rgb(0,0,0)_0px_0px_0px_2px]" : ""} box-border caret-transparent inline-block h-5 tracking-[1px] leading-[14px] text-center w-5 bg-center p-2 rounded-[100px] md:p-3 before:accent-auto before:shadow-none before:box-border before:caret-transparent before:text-black before:block before:text-sm before:not-italic before:normal-nums before:font-normal before:tracking-[1px] before:leading-[14px] before:list-outside before:list-none before:pointer-events-auto before:absolute before:text-center before:indent-[0px] before:normal-case before:visible before:z-[2] before:rounded-[100px] before:border-separate before:border-2 before:border-solid before:border-white before:-inset-px before:font-avantt before:md:shadow-[rgba(0,0,0,0.5)_0px_0px_1px_1px_inset]`}
+                          style={{
+                            backgroundImage: `url('${color.backgroundImageUrl}')`,
+                          }}
+                          className={`relative text-black text-sm font-normal bg-no-repeat bg-size-[100%] ${color.isSelected ? "shadow-[rgb(0,0,0)_0px_0px_0px_2px]" : ""} box-border caret-transparent inline-block h-5 tracking-[1px] leading-[14px] text-center w-5 bg-center p-2 rounded-[100px] md:p-3 before:accent-auto before:shadow-none before:box-border before:caret-transparent before:text-black before:block before:text-sm before:not-italic before:normal-nums before:font-normal before:tracking-[1px] before:leading-[14px] before:list-outside before:list-none before:pointer-events-auto before:absolute before:text-center before:indent-[0px] before:normal-case before:visible before:z-[2] before:rounded-[100px] before:border-separate before:border-2 before:border-solid before:border-white before:-inset-px before:font-avantt before:md:shadow-[rgba(0,0,0,0.5)_0px_0px_1px_1px_inset]`}
                         ></label>
                       </div>
                     ))}

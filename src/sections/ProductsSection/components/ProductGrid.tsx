@@ -362,23 +362,23 @@ export const ProductGrid = () => {
       >
         <svg
           aria-hidden="true"
-          viewBox="0 0 20 20"
-          className="h-5 w-5"
+          viewBox="0 0 24 24"
+          className="h-6 w-6"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M13.5 4.5L8 10L13.5 15.5"
+            d="M19 12H5"
             stroke="currentColor"
-            strokeWidth="1.75"
+            strokeWidth="2"
             strokeLinecap="round"
-            strokeLinejoin="round"
           />
           <path
-            d="M8.5 10H15.5"
+            d="M11 6L5 12L11 18"
             stroke="currentColor"
-            strokeWidth="1.75"
+            strokeWidth="2"
             strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       </button>
@@ -390,23 +390,23 @@ export const ProductGrid = () => {
       >
         <svg
           aria-hidden="true"
-          viewBox="0 0 20 20"
-          className="h-5 w-5"
+          viewBox="0 0 24 24"
+          className="h-6 w-6"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M6.5 4.5L12 10L6.5 15.5"
+            d="M5 12H19"
             stroke="currentColor"
-            strokeWidth="1.75"
+            strokeWidth="2"
             strokeLinecap="round"
-            strokeLinejoin="round"
           />
           <path
-            d="M4.5 10H11.5"
+            d="M13 6L19 12L13 18"
             stroke="currentColor"
-            strokeWidth="1.75"
+            strokeWidth="2"
             strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       </button>
