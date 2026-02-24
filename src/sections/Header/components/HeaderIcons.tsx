@@ -14,7 +14,7 @@ export const HeaderIcons = ({ onOpenCart }: HeaderIconsProps) => {
       </button>
       <a
         href="https://www.loopearplugs.com/account/login"
-        className="text-neutral-900 items-center box-border caret-transparent hidden min-h-0 min-w-0 underline-offset-[3px] p-3 md:flex md:min-h-[auto] md:min-w-[auto]"
+        className="text-neutral-900 items-center box-border caret-transparent hidden hover:underline min-h-0 min-w-0 underline-offset-[3px] p-3 md:flex md:min-h-[auto] md:min-w-[auto]"
       >
         <span className="box-border caret-transparent inline min-h-0 min-w-0 underline-offset-[3px] md:block md:min-h-[auto] md:min-w-[auto]">
           Account
