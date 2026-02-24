@@ -156,7 +156,8 @@ export const DesktopNav = () => {
                   <a
                     key={link.label}
                     href={link.href}
-                    className="flex min-h-[104px] items-center justify-between rounded-2xl bg-[#ececec] px-4 py-3 shadow-none transition hover:bg-[#e5e5e5] hover:shadow-none"
+                    className="flex min-h-[104px] items-center justify-between rounded-2xl bg-[#ececec] px-4 py-3 !shadow-none transition hover:bg-[#e5e5e5] hover:!shadow-none focus:!shadow-none focus-visible:!shadow-none active:!shadow-none"
+                    style={{ boxShadow: "none" }}
                   >
                     <div className="flex items-center gap-4">
                       <img
@@ -171,7 +172,7 @@ export const DesktopNav = () => {
 
                     <span
                       aria-hidden="true"
-                      className="inline-flex h-[44px] w-[44px] items-center justify-center rounded-full bg-[#f7f7f7] text-[20px] text-[#2d2d2d]"
+                      className="inline-flex h-[44px] w-[44px] items-center justify-center rounded-full bg-[#f7f7f7] text-[20px] text-[#2d2d2d] !shadow-none"
                     >
                       →
                     </span>
