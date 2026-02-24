@@ -200,7 +200,7 @@ export const ProductCard = (props: ProductCardProps) => {
                       <button
                         type="submit"
                         name="add"
-                        className="relative text-white items-center bg-stone-200 caret-transparent inline-flex justify-center leading-[normal] min-h-12 min-w-[122px] opacity-50 text-center w-full px-10 py-0 rounded-[9999.01px] md:w-auto"
+                        className="relative text-white items-center bg-zinc-900 caret-transparent inline-flex justify-center leading-[normal] min-h-12 min-w-[122px] text-center w-full px-10 py-0 rounded-[9999.01px] md:w-auto"
                       >
                         <span className="box-border caret-transparent block">
                           Add to cart
