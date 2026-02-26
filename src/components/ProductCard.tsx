@@ -1,3 +1,4 @@
+import { useState } from "react";
 export type ProductCardProps = {
   ariaLabel: string;
   productUrl: string;
@@ -29,6 +30,14 @@ export const ProductCard = (props: ProductCardProps) => {
   const hasPartialStar = props.rating % 1 !== 0;
   const partialStarWidth = `${(props.rating % 1) * 100}%`;
   const emptyStars = 5 - Math.ceil(props.rating);
+  const initialSelectedColorIndex = props.colorOptions.findIndex(
+    (color) => color.isSelected,
+  );
+  const [selectedColorIndex, setSelectedColorIndex] = useState(
+    initialSelectedColorIndex >= 0 ? initialSelectedColorIndex : 0,
+  );
+  const selectedColorName =
+    props.colorOptions[selectedColorIndex]?.colorName ?? props.selectedColor;
 
   return (
     <div
@@ -83,26 +92,37 @@ export const ProductCard = (props: ProductCardProps) => {
                         Color:
                       </legend>
                       <span className="text-neutral-600 box-border caret-transparent block">
-                        {props.selectedColor}
+                        {selectedColorName}
                       </span>
                     </div>
-                    {props.colorOptions.map((color, index) => (
-                      <div
-                        key={index}
-                        className="box-border caret-transparent w-6 rounded-[9999.01px]"
-                      >
-                        <label
-                          className={`relative text-black text-sm font-normal bg-[url('${color.backgroundImageUrl}')] bg-no-repeat bg-size-[100%] ${color.isSelected ? "shadow-[rgb(0,0,0)_0px_0px_0px_2px]" : ""} box-border caret-transparent inline-block h-5 tracking-[1px] leading-[14px] text-center w-5 bg-center p-2 rounded-[100px] md:p-3 before:accent-auto before:shadow-none before:box-border before:caret-transparent before:text-black before:block before:text-sm before:not-italic before:normal-nums before:font-normal before:tracking-[1px] before:leading-[14px] before:list-outside before:list-none before:pointer-events-auto before:absolute before:text-center before:indent-[0px] before:normal-case before:visible before:z-[2] before:rounded-[100px] before:border-separate before:border-2 before:border-solid before:border-white before:-inset-px before:font-avantt before:md:shadow-[rgba(0,0,0,0.5)_0px_0px_1px_1px_inset]`}
-                        ></label>
-                      </div>
-                    ))}
+                    {props.colorOptions.map((color, index) => {
+                      const isSelected = index === selectedColorIndex;
+
+                      return (
+                        <button
+                          key={index}
+                          type="button"
+                          aria-label={`Select ${color.colorName}`}
+                          aria-pressed={isSelected}
+                          onClick={() => setSelectedColorIndex(index)}
+                          className="box-border caret-transparent w-6 rounded-[9999.01px]"
+                        >
+                          <span
+                            style={{
+                              backgroundImage: `url('${color.backgroundImageUrl}')`,
+                            }}
+                            className={`relative text-black text-sm font-normal bg-no-repeat bg-size-[100%] ${isSelected ? "shadow-[rgb(0,0,0)_0px_0px_0px_2px]" : ""} box-border caret-transparent inline-block h-5 tracking-[1px] leading-[14px] text-center w-5 bg-center p-2 rounded-[100px] md:p-3 before:accent-auto before:shadow-none before:box-border before:caret-transparent before:text-black before:block before:text-sm before:not-italic before:normal-nums before:font-normal before:tracking-[1px] before:leading-[14px] before:list-outside before:list-none before:pointer-events-auto before:absolute before:text-center before:indent-[0px] before:normal-case before:visible before:z-[2] before:rounded-[100px] before:border-separate before:border-2 before:border-solid before:border-white before:-inset-px before:font-avantt before:md:shadow-[rgba(0,0,0,0.5)_0px_0px_1px_1px_inset]`}
+                          ></span>
+                        </button>
+                      );
+                    })}
                   </fieldset>
                 </div>
               </div>
               <h3 className="text-neutral-900 text-2xl box-border caret-transparent tracking-[-0.72px] leading-9 break-words md:text-[32px] md:tracking-[-0.96px] md:leading-[48px]">
                 <a
                   href={props.productUrl}
-                  className="text-2xl items-center box-border caret-transparent inline-flex tracking-[-0.72px] leading-9 break-words md:text-[32px] md:tracking-[-0.96px] md:leading-[48px] after:accent-auto after:box-border after:caret-transparent after:text-neutral-900 after:block after:text-2xl after:not-italic after:normal-nums after:font-medium after:tracking-[-0.72px] after:leading-9 after:list-outside after:list-none after:break-words after:pointer-events-auto after:absolute after:text-left after:indent-[0px] after:normal-case after:visible after:z-[1] after:rounded-2xl after:border-separate after:inset-0 after:font-avantt after:md:text-[32px] after:md:tracking-[-0.96px] after:md:leading-[48px]"
+                  className="text-2xl items-center box-border caret-transparent inline-flex tracking-[-0.72px] leading-9 break-words hover:underline md:text-[32px] md:tracking-[-0.96px] md:leading-[48px] after:accent-auto after:box-border after:caret-transparent after:text-neutral-900 after:block after:text-2xl after:not-italic after:normal-nums after:font-medium after:tracking-[-0.72px] after:leading-9 after:list-outside after:list-none after:break-words after:pointer-events-auto after:absolute after:text-left after:indent-[0px] after:normal-case after:visible after:z-[1] after:rounded-2xl after:border-separate after:inset-0 after:font-avantt after:md:text-[32px] after:md:tracking-[-0.96px] after:md:leading-[48px]"
                 >
                   {props.productTitle}
                 </a>
@@ -200,7 +220,7 @@ export const ProductCard = (props: ProductCardProps) => {
                       <button
                         type="submit"
                         name="add"
-                        className="relative text-white items-center bg-stone-200 caret-transparent inline-flex justify-center leading-[normal] min-h-12 min-w-[122px] opacity-50 text-center w-full px-10 py-0 rounded-[9999.01px] md:w-auto"
+                        className="relative text-white items-center bg-zinc-900 caret-transparent inline-flex justify-center leading-[normal] min-h-12 min-w-[122px] text-center w-full px-10 py-0 rounded-[9999.01px] md:w-auto"
                       >
                         <span className="box-border caret-transparent block">
                           Add to cart
