@@ -358,7 +358,7 @@ export const ProductGrid = () => {
         type="button"
         aria-label="Previous slide"
         onClick={() => scrollCarousel("prev")}
-        className={`absolute text-neutral-800 items-center bg-white shadow-[rgba(0,0,0,0.05)_0px_0px_10px_0px] flex h-12 justify-center -translate-y-1/2 w-12 z-[4] rounded-[9999.01px] left-2 top-2/4 md:left-[-24px] ${canScrollPrev ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+        className={`absolute text-neutral-800 items-center bg-white shadow-[rgba(0,0,0,0.05)_0px_0px_10px_0px] flex h-12 justify-center -translate-y-1/2 w-12 z-[4] rounded-[9999.01px] left-2 top-2/4 md:left-6 ${canScrollPrev ? "opacity-100" : "opacity-0 pointer-events-none"}`}
       >
         <svg
           aria-hidden="true"
@@ -386,7 +386,7 @@ export const ProductGrid = () => {
         type="button"
         aria-label="Next slide"
         onClick={() => scrollCarousel("next")}
-        className={`absolute text-neutral-800 items-center bg-white shadow-[rgba(0,0,0,0.05)_0px_0px_10px_0px] flex h-12 justify-center -translate-y-1/2 w-12 z-[4] rounded-[9999.01px] right-2 top-2/4 md:right-[-24px] ${canScrollNext ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+        className={`absolute text-neutral-800 items-center bg-white shadow-[rgba(0,0,0,0.05)_0px_0px_10px_0px] flex h-12 justify-center -translate-y-1/2 w-12 z-[4] rounded-[9999.01px] right-2 top-2/4 md:right-6 ${canScrollNext ? "opacity-100" : "opacity-0 pointer-events-none"}`}
       >
         <svg
           aria-hidden="true"
